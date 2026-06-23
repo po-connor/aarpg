@@ -19,7 +19,7 @@ func _ready() -> void:
 func init(state_machine, entity) -> void:
 	_state_machine = state_machine
 	_entity = entity
-	pass
+
 
 ## What happens when the player enter this State
 func enter() -> void:
@@ -29,7 +29,7 @@ func enter() -> void:
 func exit() -> void:
 	pass
 
-## What happens during _process update in this State
+## What happens during _process update in dsthis State
 func process(_delta: float) -> void:
 	pass
 

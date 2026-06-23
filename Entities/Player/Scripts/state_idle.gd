@@ -19,3 +19,5 @@ func handle_input(_event: InputEvent) -> void:
 	super(_event)
 	if _event.is_action_pressed("attack"):
 		_state_machine.change_state("attack")
+	if _event.is_action_pressed("interact"):
+		(_entity as Player).interact_pressed.emit()

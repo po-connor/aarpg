@@ -1,5 +1,8 @@
 class_name Player extends Entity
 
+@warning_ignore("unused_signal")
+signal interact_pressed
+
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
 
 @export var override_death: bool = false

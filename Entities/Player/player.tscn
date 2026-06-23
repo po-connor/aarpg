@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://cyx2yilc54qm" path="res://Entities/Player/Scripts/player_camera.gd" id="11_5htga"]
 [ext_resource type="PackedScene" uid="uid://b2per0lp5qju" path="res://Entities/UtilityNodes/HurtBox/hurt_box.tscn" id="13_owvpp"]
 [ext_resource type="Script" uid="uid://df3oyp3xts44e" path="res://Entities/Player/Scripts/state_hurt.gd" id="14_nhbkt"]
+[ext_resource type="Script" uid="uid://biwlpcyvgedyd" path="res://Entities/Player/Scripts/player_interactions.gd" id="15_nhbkt"]
 [ext_resource type="AudioStream" uid="uid://ce0318wh8gyhc" path="res://Entities/Player/Audio/hit_player.wav" id="15_r8fok"]
 
 [sub_resource type="Animation" id="Animation_5htga"]
@@ -600,6 +601,9 @@ _data = {
 &"hurt": SubResource("Animation_pjcup")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vskfa"]
+size = Vector2(20, 27)
+
 [node name="Player" type="CharacterBody2D" unique_id=1245228653 node_paths=PackedStringArray("hitbox")]
 collision_mask = 17
 motion_mode = 1
@@ -689,3 +693,15 @@ debug_color = Color(1, 0, 0, 0.39215687)
 
 [node name="EffectAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1971110937]
 libraries/ = SubResource("AnimationLibrary_0poeq")
+
+[node name="Interactions" type="Node2D" parent="." unique_id=1216909175]
+script = ExtResource("15_nhbkt")
+
+[node name="Area2D" type="Area2D" parent="Interactions" unique_id=533233829]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D" unique_id=1186448658]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_vskfa")

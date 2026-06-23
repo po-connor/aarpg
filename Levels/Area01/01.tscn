@@ -4,9 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://vk1gceyypjf2" path="res://TileMaps/grass-01.tscn" id="1_vbl6q"]
 [ext_resource type="PackedScene" uid="uid://dbhv13lwe7daf" path="res://Levels/player_spawn.tscn" id="2_chooo"]
 [ext_resource type="PackedScene" uid="uid://c8vv686s1e0db" path="res://Levels/level_transition.tscn" id="4_4t7i1"]
-[ext_resource type="PackedScene" uid="uid://21t22vjvneei" path="res://Entities/Enemies/Slime/slime.tscn" id="5_pwydo"]
-[ext_resource type="PackedScene" uid="uid://bw6tim3l0sepa" path="res://Items/ItemPickup/item_pickup.tscn" id="6_xhij5"]
-[ext_resource type="Resource" uid="uid://dsjot8ebsf5se" path="res://Items/apple.tres" id="7_th3kk"]
+[ext_resource type="PackedScene" uid="uid://kx5f2fqw1t8v" path="res://Entities/Enemies/Goblin/goblin.tscn" id="5_pwydo"]
 
 [node name="01" type="Node2D" unique_id=443361681]
 script = ExtResource("1_22ele")
@@ -32,21 +30,5 @@ size = 3
 step_size = 32
 side = 3
 
-[node name="Slime" parent="." unique_id=43830155 instance=ExtResource("5_pwydo")]
-position = Vector2(320, 424)
-
-[node name="Slime2" parent="." unique_id=1771867438 instance=ExtResource("5_pwydo")]
-position = Vector2(160, 520)
-
-[node name="Slime3" parent="." unique_id=2056924931 instance=ExtResource("5_pwydo")]
-position = Vector2(248, 544)
-
-[node name="Slime4" parent="." unique_id=1376205289 instance=ExtResource("5_pwydo")]
-position = Vector2(152, 600)
-
-[node name="Slime5" parent="." unique_id=1031619695 instance=ExtResource("5_pwydo")]
-position = Vector2(336, 584)
-
-[node name="ItemPickup" parent="." unique_id=1542577602 instance=ExtResource("6_xhij5")]
-position = Vector2(288, 624)
-item_data = ExtResource("7_th3kk")
+[node name="Goblin" parent="." unique_id=43830155 instance=ExtResource("5_pwydo")]
+position = Vector2(336, 464)

@@ -1,0 +1,264 @@
+[gd_scene format=3 uid="uid://0mwtcw3koam5"]
+
+[ext_resource type="Script" uid="uid://c3llnspcqrwbd" path="res://Entities/Interactables/TreasureChest/treasure_chest.gd" id="1_wwfyc"]
+[ext_resource type="Texture2D" uid="uid://bcdc4xwwtxk40" path="res://Entities/Interactables/TreasureChest/Sprites/treasure-chest.png" id="2_d4s37"]
+[ext_resource type="AudioStream" uid="uid://isetvi7ahhi3" path="res://Entities/Interactables/TreasureChest/Audio/treasure-open.wav" id="4_w54x4"]
+[ext_resource type="PackedScene" uid="uid://b1emmhtrf0hdf" path="res://Handlers/PersistentDataHandler/persistent_data_handler.tscn" id="5_q4456"]
+
+[sub_resource type="Animation" id="Animation_d4s37"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChestSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItemSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ItemSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ItemSprite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_w54x4"]
+resource_name = "closed"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChestSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItemSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ItemSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_y78fa"]
+resource_name = "open_chest"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChestSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItemSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.3, 0.5, 1.5),
+"transitions": PackedFloat32Array(0.5, -2, 2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -48), Vector2(0, -38), Vector2(0, -38)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ItemSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_w54x4")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ItemSprite:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2, 0.3, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.353256, 1.353256, 1.353256, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q4456"]
+resource_name = "opened"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChestSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItemSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ItemSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q4456"]
+_data = {
+&"RESET": SubResource("Animation_d4s37"),
+&"closed": SubResource("Animation_w54x4"),
+&"open_chest": SubResource("Animation_y78fa"),
+&"opened": SubResource("Animation_q4456")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4s37"]
+size = Vector2(30, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d4s37"]
+radius = 22.090721
+
+[node name="TreasureChest" type="Node2D" unique_id=1259112525]
+process_mode = 3
+script = ExtResource("1_wwfyc")
+
+[node name="ChestSprite" type="Sprite2D" parent="." unique_id=1965264930]
+texture = ExtResource("2_d4s37")
+hframes = 2
+
+[node name="ItemSprite" type="Sprite2D" parent="." unique_id=2101922471]
+
+[node name="QuantityLabel" type="Label" parent="ItemSprite" unique_id=1721756267]
+offset_top = -11.0
+offset_right = 40.0
+offset_bottom = 12.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2114806638]
+libraries/ = SubResource("AnimationLibrary_q4456")
+autoplay = &"closed"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1750011117]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1222499956]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=776920953]
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_d4s37")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=488125220]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=2139282848]
+position = Vector2(0, 11)
+shape = SubResource("CircleShape2D_d4s37")
+debug_color = Color(0.1411179, 0.64017075, 0.26071477, 0.41960785)
+
+[node name="PersistentDataIsOpen" parent="." unique_id=1418038468 instance=ExtResource("5_q4456")]

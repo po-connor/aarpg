@@ -16,7 +16,10 @@ func add_player_intance() -> void:
 	add_child(player)
 
 func remove_player_instance() -> void:
-	remove_child(player)
+	if player == null:
+		return
+	if find_child("Player"):
+		remove_child(player)
 	player.queue_free()
 	player = null
 	
@@ -35,4 +38,6 @@ func set_as_parent(node: Node2D) -> void:
 	node.add_child(player)
 
 func unparent_player(node: Node2D) -> void:
+	if player == null:
+		return
 	node.remove_child(player)
