@@ -17,6 +17,9 @@ var current_save: Dictionary = {
 	persistence = [],
 	quests = []
 }
+
+func save_file_exists() -> bool:
+	return FileAccess.file_exists(SAVE_PATH + "save.sav")
  
 func save_game() -> void:
 	update_player_data()
@@ -29,6 +32,8 @@ func save_game() -> void:
 
 func load_game() -> void:
 	var file : FileAccess = FileAccess.open( SAVE_PATH + "save.sav", FileAccess.READ)
+	if file == null:
+		return
 	var json: JSON = JSON.new()
 	json.parse(file.get_line())
 	current_save = json.get_data() as Dictionary

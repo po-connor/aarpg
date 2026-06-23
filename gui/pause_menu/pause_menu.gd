@@ -37,6 +37,7 @@ func _on_load_pressed() -> void:
 	hide_pause_menu()
 
 func show_pause_menu() -> void:
+	load_button.disabled = !SaveManager.save_file_exists()
 	get_tree().paused = true
 	visible = true
 	is_paused = true
