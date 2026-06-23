@@ -1,16 +1,10 @@
 class_name Entity extends CharacterBody2D
 
-signal direction_changed(new_direction: Vector2)
-
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
-var cardinal_direction: Vector2 = Vector2.DOWN
-var direction: Vector2 = Vector2.ZERO
-
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var sprite: Sprite2D = $Sprite2D
-@onready var hurtbox: HurtBox = $HurtBox
-@onready var state_machine: StateMachine = $StateMachine
+signal entity_damaged(hitbox: HitBox)
+signal direction_changed(new_direction: Vector2)
+signal entity_destroyed(hitbox: HitBox)
 
 @export_category("Entity")
 @export var hitbox: HitBox
@@ -18,8 +12,14 @@ var direction: Vector2 = Vector2.ZERO
 @export var hp: int = 3
 @export var max_hp: int = 3
 
-signal entity_damaged(hitbox: HitBox)
-signal entity_destroyed(hitbox: HitBox)
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var sprite: Sprite2D = $Sprite2D
+@onready var hurtbox: HurtBox = $HurtBox
+@onready var state_machine: StateMachine = $StateMachine
+
+var cardinal_direction: Vector2 = Vector2.DOWN
+var direction: Vector2 = Vector2.ZERO
+var has_collided: bool = false
 
 func _ready() -> void:
 	if state_machine:
@@ -28,7 +28,7 @@ func _ready() -> void:
 		hurtbox.hurt.connect(_take_damage)
 
 func _physics_process(_delta: float) -> void:
-	move_and_slide()
+	has_collided = move_and_slide()
 
 func update_direction() -> bool:
 	if direction == Vector2.ZERO:

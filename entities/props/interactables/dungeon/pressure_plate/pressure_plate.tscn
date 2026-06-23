@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c7d2yx1kw56df"]
+
+[ext_resource type="Script" uid="uid://btf0ywdbrsbgu" path="res://entities/props/interactables/dungeon/pressure_plate/pressure_plate.gd" id="1_r2522"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r2522"]
+load_path = "res://.godot/imported/dungeon_props.png-054c4f96df6d723314ea45a401e192e0.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8fou"]
+size = Vector2(9.5, 8.625)
+
+[node name="PressurePlate" type="Node2D" unique_id=272898808]
+z_index = -1
+script = ExtResource("1_r2522")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=485251926]
+texture = SubResource("CompressedTexture2D_r2522")
+region_enabled = true
+region_rect = Rect2(416, 64, 32, 32)
+
+[node name="Area" type="Area2D" parent="." unique_id=1309337544]
+collision_layer = 0
+collision_mask = 273
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Area" unique_id=1132446219]
+position = Vector2(0, -0.3125)
+shape = SubResource("RectangleShape2D_x8fou")
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="." unique_id=1913768230]

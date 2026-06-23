@@ -6,6 +6,7 @@ signal interact_pressed
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
 
 @export var override_death: bool = false
+@export var push_force: float = 5.0
 
 func _ready() -> void:
 	super()

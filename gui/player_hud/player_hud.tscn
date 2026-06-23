@@ -33,10 +33,10 @@ grow_horizontal = 0
 [node name="TextureRect" type="TextureRect" parent="Control/Control" unique_id=1025087657]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.11111111
-anchor_right = 0.5
-anchor_bottom = 0.11111111
+anchor_left = 0.76704544
+anchor_top = 0.083333336
+anchor_right = 0.76704544
+anchor_bottom = 0.083333336
 offset_left = -17.0
 offset_top = 2.0
 offset_right = 17.0
@@ -60,6 +60,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 4
+alignment = 2
 
 [node name="Heart" parent="Control/Control/HFlowContainer" unique_id=2078563658 instance=ExtResource("2_6gnlv")]
 layout_mode = 2
