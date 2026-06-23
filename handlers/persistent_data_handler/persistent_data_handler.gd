@@ -12,7 +12,7 @@ func set_value() -> void:
 	SaveManager.add_persistent_value(_get_name())
 
 func get_value() -> void:
-	value = SaveManager.chech_persistent_value(_get_name())
+	value = SaveManager.check_persistent_value(_get_name())
 	data_loaded.emit()
 
 func _get_name() -> String:
