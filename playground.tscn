@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d3euui4x3rdlw" path="res://levels/level.gd" id="1_is3ju"]
 [ext_resource type="PackedScene" uid="uid://dbhv13lwe7daf" path="res://levels/player_spawn/player_spawn.tscn" id="2_m8u5f"]
-[ext_resource type="PackedScene" uid="uid://vk1gceyypjf2" path="res://tile_maps/grass-01.tscn" id="2_wt17y"]
+[ext_resource type="PackedScene" uid="uid://vk1gceyypjf2" path="res://tile_maps/grass_01.tscn" id="2_wt17y"]
 [ext_resource type="PackedScene" uid="uid://dnk2jpthv6755" path="res://entities/props/plants/Plant.tscn" id="3_m8u5f"]
 
 [node name="Playground" type="Node2D" unique_id=1913254590]

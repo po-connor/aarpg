@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://i0eupp3rpy7u"]
 
 [ext_resource type="Script" uid="uid://d3euui4x3rdlw" path="res://levels/level.gd" id="1_22ele"]
-[ext_resource type="PackedScene" uid="uid://vk1gceyypjf2" path="res://tile_maps/grass-01.tscn" id="1_vbl6q"]
+[ext_resource type="PackedScene" uid="uid://vk1gceyypjf2" path="res://tile_maps/grass_01.tscn" id="1_vbl6q"]
 [ext_resource type="PackedScene" uid="uid://dbhv13lwe7daf" path="res://levels/player_spawn/player_spawn.tscn" id="2_chooo"]
 [ext_resource type="PackedScene" uid="uid://c8vv686s1e0db" path="res://levels/level_transition/level_transition.tscn" id="4_4t7i1"]
 [ext_resource type="PackedScene" uid="uid://kx5f2fqw1t8v" path="res://entities/enemies/goblin/goblin.tscn" id="5_pwydo"]
