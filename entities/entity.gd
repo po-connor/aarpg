@@ -19,7 +19,6 @@ signal entity_destroyed(hitbox: HitBox)
 
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
-var has_collided: bool = false
 
 func _ready() -> void:
 	if state_machine:
@@ -28,7 +27,7 @@ func _ready() -> void:
 		hurtbox.hurt.connect(_take_damage)
 
 func _physics_process(_delta: float) -> void:
-	has_collided = move_and_slide()
+	move_and_slide()
 
 func update_direction() -> bool:
 	if direction == Vector2.ZERO:

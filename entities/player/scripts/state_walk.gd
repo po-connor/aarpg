@@ -18,15 +18,6 @@ func process(_delta: float) -> void:
 
 func physics(_delta: float) -> void:
 	super(_delta)
-	if _entity.has_collided:
-		_handle_collisions()
-
-func _handle_collisions() -> void:
-	for i in _entity.get_slide_collision_count():
-		var collision = _entity.get_slide_collision(i)
-		var collider = collision.get_collider() as PhysicsBody2D
-		if collider and collider.is_in_group("pushable"):
-			collider.apply_central_impulse(_entity.cardinal_direction * (_entity as Player).push_force)
 
 func handle_input(_event: InputEvent) -> void:
 	super(_event)

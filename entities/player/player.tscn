@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://df3oyp3xts44e" path="res://entities/player/scripts/state_hurt.gd" id="14_nhbkt"]
 [ext_resource type="Script" uid="uid://biwlpcyvgedyd" path="res://entities/player/scripts/player_interactions.gd" id="15_nhbkt"]
 [ext_resource type="AudioStream" uid="uid://ce0318wh8gyhc" path="res://entities/player/audio/hit_player.wav" id="15_r8fok"]
+[ext_resource type="Script" uid="uid://0thm7vqngogr" path="res://entities/player/scripts/push_area.gd" id="16_yqrof"]
 
 [sub_resource type="Animation" id="Animation_5htga"]
 length = 0.001
@@ -604,6 +605,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vskfa"]
 size = Vector2(20, 27)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gx6sm"]
+size = Vector2(20, 14.5)
+
 [node name="Player" type="CharacterBody2D" unique_id=1245228653 node_paths=PackedStringArray("hitbox")]
 collision_mask = 17
 motion_mode = 1
@@ -697,11 +701,22 @@ libraries/ = SubResource("AnimationLibrary_0poeq")
 [node name="Interactions" type="Node2D" parent="." unique_id=1216909175]
 script = ExtResource("15_nhbkt")
 
-[node name="Area2D" type="Area2D" parent="Interactions" unique_id=533233829]
+[node name="InteractArea" type="Area2D" parent="Interactions" unique_id=533233829]
 collision_layer = 8
 collision_mask = 0
 monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D" unique_id=1186448658]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/InteractArea" unique_id=1186448658]
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_vskfa")
+
+[node name="PushArea" type="Area2D" parent="Interactions" unique_id=1100802111]
+collision_layer = 0
+collision_mask = 16
+monitorable = false
+script = ExtResource("16_yqrof")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/PushArea" unique_id=359812031]
+position = Vector2(0, 4.75)
+shape = SubResource("RectangleShape2D_gx6sm")
+debug_color = Color(0.8315052, 0.20459622, 0.8215056, 0.41960785)
