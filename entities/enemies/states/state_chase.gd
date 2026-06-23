@@ -10,7 +10,6 @@ class_name EnemyStateChase extends State
 @export var exit_state: String
 
 var _timer: float = 0.0
-var _direction: Vector2
 var _can_see_player: bool = false
 
 func init(state_machine, entity) -> void:
@@ -36,7 +35,7 @@ func exit() -> void:
 func process(delta: float) -> void:
 	super(delta)
 	var new_dir : Vector2 = _entity.global_position.direction_to(PlayerManager.player.global_position)
-	_entity.direction = lerp(_direction, new_dir, turn_rate)
+	_entity.direction = lerp(_entity.direction, new_dir, turn_rate)
 	_entity.velocity = _entity.direction.normalized() * chase_speed
 	if _entity.update_direction():
 		_entity.update_animation(state_name)
