@@ -36,7 +36,7 @@ func load_game() -> void:
 	PlayerManager.remove_player_instance()
 	LevelManager.load_new_level(current_save.scene_path, "", Vector2.ZERO)
 	await LevelManager.level_load_started
-	PlayerManager.add_player_intance()
+	PlayerManager.add_player_instance()
 	PlayerManager.set_player_position(Vector2(current_save.player.pos_x, current_save.player.pos_y))
 	PlayerManager.set_player_health(current_save.player.hp, current_save.player.max_hp)
 	PlayerManager.INVENTORY_DATA.parse_saved_items(current_save.items)
