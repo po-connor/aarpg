@@ -9,7 +9,7 @@
 size = Vector2(28, 12)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ksrw"]
-radius = 30.016663
+radius = 18.0
 
 [node name="PushableStatue" type="RigidBody2D" unique_id=1824983454]
 collision_layer = 16

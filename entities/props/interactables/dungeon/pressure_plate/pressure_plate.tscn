@@ -10,7 +10,7 @@ load_path = "res://.godot/imported/dungeon_props.png-054c4f96df6d723314ea45a401e
 size = Vector2(9.5, 8.625)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_brcxg"]
-radius = 38.013157
+radius = 19.026299
 
 [node name="PressurePlate" type="Node2D" unique_id=272898808]
 z_index = -1

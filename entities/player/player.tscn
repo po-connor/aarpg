@@ -620,6 +620,12 @@ hitbox = NodePath("Sprite2D/HitBox")
 hp = 6
 max_hp = 6
 
+[node name="InteractionNotification" type="Sprite2D" parent="." unique_id=1910289770]
+visible = false
+position = Vector2(0, -60)
+texture = ExtResource("17_3wlsy")
+hframes = 3
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1769037919]
 position = Vector2(0, -21)
 texture = ExtResource("2_k53q1")
@@ -724,9 +730,3 @@ script = ExtResource("16_yqrof")
 position = Vector2(0, 4.75)
 shape = SubResource("RectangleShape2D_gx6sm")
 debug_color = Color(0.8315052, 0.20459622, 0.8215056, 0.41960785)
-
-[node name="InteractionNotification" type="Sprite2D" parent="." unique_id=1910289770]
-visible = false
-position = Vector2(0, -60)
-texture = ExtResource("17_3wlsy")
-hframes = 3

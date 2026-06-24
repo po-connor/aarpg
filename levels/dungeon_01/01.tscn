@@ -38,7 +38,7 @@ position = Vector2(224, 56)
 position = Vector2(192, 128)
 
 [node name="TreasureChest" parent="." unique_id=1259112525 instance=ExtResource("8_3a318")]
-position = Vector2(192, 192)
+position = Vector2(192, 200)
 
 [connection signal="activated" from="PressurePlate" to="BarredDoor" method="_on_open"]
 [connection signal="deactivated" from="PressurePlate" to="BarredDoor" method="_on_close"]

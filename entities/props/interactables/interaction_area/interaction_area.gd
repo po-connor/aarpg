@@ -8,12 +8,12 @@ func _ready() -> void:
 	
 func _on_area_entered(area: Node2D) -> void:
 	if area is PlayerInteractionArea:
-		PlayerManager.player.interactions.register(area)
+		PlayerManager.player.interactions.register(self)
 		PlayerManager.player.interact_pressed.connect(_on_player_interact_pressed)
 
 func _on_area_exited(area: Node2D) -> void:
 	if area is PlayerInteractionArea:
-		PlayerManager.player.interactions.unregister(area)
+		PlayerManager.player.interactions.unregister(self)
 		PlayerManager.player.interact_pressed.disconnect(_on_player_interact_pressed)
 
 func _on_player_interact_pressed() -> void:
