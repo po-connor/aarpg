@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://biwlpcyvgedyd" path="res://entities/player/scripts/player_interactions.gd" id="15_nhbkt"]
 [ext_resource type="AudioStream" uid="uid://ce0318wh8gyhc" path="res://entities/player/audio/hit_player.wav" id="15_r8fok"]
 [ext_resource type="Script" uid="uid://0thm7vqngogr" path="res://entities/player/scripts/push_area.gd" id="16_yqrof"]
+[ext_resource type="Texture2D" uid="uid://qusuluiudyhn" path="res://entities/player/sprites/interactions.png" id="17_3wlsy"]
 
 [sub_resource type="Animation" id="Animation_5htga"]
 length = 0.001
@@ -720,3 +721,9 @@ script = ExtResource("16_yqrof")
 position = Vector2(0, 4.75)
 shape = SubResource("RectangleShape2D_gx6sm")
 debug_color = Color(0.8315052, 0.20459622, 0.8215056, 0.41960785)
+
+[node name="InteractionNotification" type="Sprite2D" parent="." unique_id=1910289770]
+visible = false
+position = Vector2(0, -60)
+texture = ExtResource("17_3wlsy")
+hframes = 3

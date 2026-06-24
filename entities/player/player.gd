@@ -4,6 +4,8 @@ class_name Player extends Entity
 signal interact_pressed
 
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
+@onready var interactions: PlayerInteractions = $Interactions
+@onready var interaction_notification: Sprite2D = $InteractionNotification
 
 @export var override_death: bool = false
 @export var push_force: float = 5.0
@@ -18,6 +20,7 @@ func _process(_delta: float) -> void:
 		Input.get_axis("left", "right"), 
 		Input.get_axis("up", "down")
 	).normalized()
+	interaction_notification.visible = interactions.interactable_counts > 0
 
 func update_hp(delta: int) -> void:
 	super(delta)

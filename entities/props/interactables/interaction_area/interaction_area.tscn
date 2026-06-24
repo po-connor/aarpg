@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dti0ciu1myocd"]
+
+[ext_resource type="Script" uid="uid://ddc6gdbwdap1f" path="res://entities/props/interactables/interaction_area/interaction_area.gd" id="1_fop4d"]
+
+[node name="InteractionArea" type="Area2D" unique_id=2008095423]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_fop4d")

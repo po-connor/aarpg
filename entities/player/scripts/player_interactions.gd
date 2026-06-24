@@ -2,8 +2,16 @@ class_name PlayerInteractions extends Node2D
 
 @onready var player: Player = $".."
 
+var interactable_counts: int = 0
+
 func _ready() -> void:
 	player.direction_changed.connect(update_direction)
+
+func register() -> void:
+	interactable_counts += 1
+
+func unregister() -> void:
+	interactable_counts -= 1
 
 func update_direction(new_direction: Vector2) -> void:
 	match new_direction:

@@ -3,9 +3,13 @@
 [ext_resource type="Script" uid="uid://ijjr251arsph" path="res://entities/props/interactables/dungeon/pushable_statue/pushable_statue.gd" id="1_h26s1"]
 [ext_resource type="Texture2D" uid="uid://b0qlhj80jvgxk" path="res://entities/props/interactables/dungeon/sprites/dungeon_props.png" id="2_clq5i"]
 [ext_resource type="AudioStream" uid="uid://wevv5o0j67nb" path="res://entities/props/interactables/dungeon/pushable_statue/audio/push_stone.wav" id="3_clq5i"]
+[ext_resource type="PackedScene" uid="uid://dti0ciu1myocd" path="res://entities/props/interactables/interaction_area/interaction_area.tscn" id="4_pj3jk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h26s1"]
 size = Vector2(28, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ksrw"]
+radius = 30.016663
 
 [node name="PushableStatue" type="RigidBody2D" unique_id=1824983454]
 collision_layer = 16
@@ -27,3 +31,8 @@ shape = SubResource("RectangleShape2D_h26s1")
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="." unique_id=1248741089]
 stream = ExtResource("3_clq5i")
+
+[node name="InteractionArea" parent="." unique_id=2008095423 instance=ExtResource("4_pj3jk")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1889668248]
+shape = SubResource("CircleShape2D_2ksrw")

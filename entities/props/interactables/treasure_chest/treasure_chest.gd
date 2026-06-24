@@ -6,7 +6,7 @@ class_name TreasureChest extends Node2D
 
 @onready var item_sprite: Sprite2D = $ItemSprite
 @onready var chest_sprite: Sprite2D = $ChestSprite
-@onready var interaction_area: Area2D = $InteractionArea
+@onready var interaction_area: InteractionArea = $InteractionArea
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var quantity_label: Label = $ItemSprite/QuantityLabel
 @onready var persistent_data_is_open: PersistentDataHandler = $PersistentDataIsOpen
@@ -18,8 +18,7 @@ func _ready() -> void:
 	_update_texture()
 	if Engine.is_editor_hint():
 		return
-	interaction_area.area_entered.connect(_on_area_entered)
-	interaction_area.area_exited.connect(_on_area_exited)
+	interaction_area.interacted.connect(_on_player_interact)
 	persistent_data_is_open.data_loaded.connect(_set_chest_state)
 	_set_chest_state()
 
@@ -41,16 +40,6 @@ func _on_player_interact() -> void:
 	else:
 		printerr("No Item in Chest!")
 		push_error("No Item in Chest! Chest Name: ", name)
-
-func _on_area_entered(_a: Area2D) -> void:
-	if PlayerManager.player:
-		PlayerManager.player.interact_pressed.connect(_on_player_interact)
-	pass
-
-func _on_area_exited(_a: Area2D) -> void:
-	if PlayerManager.player:
-		PlayerManager.player.interact_pressed.disconnect(_on_player_interact)
-	pass
 
 func _set_item_data(value: ItemData) -> void:
 	item_data = value

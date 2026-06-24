@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3llnspcqrwbd" path="res://entities/props/interactables/treasure_chest/treasure_chest.gd" id="1_wwfyc"]
 [ext_resource type="Texture2D" uid="uid://bcdc4xwwtxk40" path="res://entities/props/interactables/treasure_chest/sprites/treasure_chest.png" id="2_d4s37"]
+[ext_resource type="Script" uid="uid://ddc6gdbwdap1f" path="res://entities/props/interactables/interaction_area/interaction_area.gd" id="4_sda53"]
 [ext_resource type="AudioStream" uid="uid://isetvi7ahhi3" path="res://entities/props/interactables/treasure_chest/audio/treasure_open.wav" id="4_w54x4"]
 [ext_resource type="PackedScene" uid="uid://b1emmhtrf0hdf" path="res://handlers/persistent_data_handler/persistent_data_handler.tscn" id="5_q4456"]
 
@@ -251,10 +252,12 @@ collision_mask = 0
 position = Vector2(0, 15)
 shape = SubResource("RectangleShape2D_d4s37")
 
-[node name="InteractionArea" type="Area2D" parent="." unique_id=488125220]
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1719336488]
 collision_layer = 0
 collision_mask = 8
 monitorable = false
+script = ExtResource("4_sda53")
+metadata/_custom_type_script = "uid://ddc6gdbwdap1f"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=2139282848]
 position = Vector2(0, 11)
