@@ -1,0 +1,1 @@
+class_name PlayerInteractionArea extends Area2D

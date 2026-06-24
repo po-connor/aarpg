@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://df3oyp3xts44e" path="res://entities/player/scripts/state_hurt.gd" id="14_nhbkt"]
 [ext_resource type="Script" uid="uid://biwlpcyvgedyd" path="res://entities/player/scripts/player_interactions.gd" id="15_nhbkt"]
 [ext_resource type="AudioStream" uid="uid://ce0318wh8gyhc" path="res://entities/player/audio/hit_player.wav" id="15_r8fok"]
+[ext_resource type="Script" uid="uid://icep0ghddvet" path="res://entities/player/player_interaction_area/player_interaction_area.gd" id="16_b2kln"]
 [ext_resource type="Script" uid="uid://0thm7vqngogr" path="res://entities/player/scripts/push_area.gd" id="16_yqrof"]
 [ext_resource type="Texture2D" uid="uid://qusuluiudyhn" path="res://entities/player/sprites/interactions.png" id="17_3wlsy"]
 
@@ -702,10 +703,12 @@ libraries/ = SubResource("AnimationLibrary_0poeq")
 [node name="Interactions" type="Node2D" parent="." unique_id=1216909175]
 script = ExtResource("15_nhbkt")
 
-[node name="InteractArea" type="Area2D" parent="Interactions" unique_id=533233829]
+[node name="InteractArea" type="Area2D" parent="Interactions" unique_id=1543899444]
 collision_layer = 8
 collision_mask = 0
 monitoring = false
+script = ExtResource("16_b2kln")
+metadata/_custom_type_script = "uid://icep0ghddvet"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/InteractArea" unique_id=1186448658]
 position = Vector2(0, 11)
