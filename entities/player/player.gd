@@ -22,7 +22,7 @@ func _process(_delta: float) -> void:
 	interaction_notification.visible = interactions.interactables_in_range.size() > 0
 
 func interact() -> void:
-	var target: Node2D = interactions.get_nearest()
+	var target: InteractionArea = interactions.get_nearest()
 	if target == null:
 		return
 	interact_pressed.emit(target)

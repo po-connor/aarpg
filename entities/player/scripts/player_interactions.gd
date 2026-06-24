@@ -2,13 +2,13 @@ class_name PlayerInteractions extends Node2D
 
 @onready var player: Player = $".."
 
-var interactables_in_range: Array[Node2D] = []
+var interactables_in_range: Array[InteractionArea] = []
 
 func _ready() -> void:
 	player.direction_changed.connect(update_direction)
 
 func update_interactables() -> void:
-	var alive_interactables: Array[Node2D] = []
+	var alive_interactables: Array[InteractionArea] = []
 	for interactable in interactables_in_range:
 		if is_instance_valid(interactable) and interactable.is_inside_tree():
 			alive_interactables.append(interactable)
@@ -16,19 +16,19 @@ func update_interactables() -> void:
 		interactables_in_range.clear()
 		interactables_in_range.append_array(alive_interactables)
 
-func register(node: Node2D) -> void:
+func register(node: InteractionArea) -> void:
 	if not interactables_in_range.has(node):
 		interactables_in_range.append(node)
 		node.tree_exiting.connect(unregister.bind(node), CONNECT_ONE_SHOT)
 
-func unregister(node: Node2D) -> void:
+func unregister(node: InteractionArea) -> void:
 	var index: int = interactables_in_range.find(node)
 	if index >= 0:
 		interactables_in_range.remove_at(index)
 	if node.tree_exiting.is_connected(unregister.bind(node)):
 		node.tree_exiting.disconnect(unregister.bind(node))
 
-func get_nearest() -> Node2D:
+func get_nearest() -> InteractionArea:
 	if interactables_in_range.size() < 1:
 		return null
 	if interactables_in_range.size() == 1:
