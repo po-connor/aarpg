@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 		Input.get_axis("left", "right"), 
 		Input.get_axis("up", "down")
 	).normalized()
-	interaction_notification.visible = interactions.interactable_counts > 0
+	interaction_notification.visible = interactions.interactables_in_range.size() > 0
 
 func update_hp(delta: int) -> void:
 	super(delta)
