@@ -2,8 +2,6 @@ class_name InteractionArea extends Area2D
 
 signal interacted
 
-@export var is_enabled: bool = true
-
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)

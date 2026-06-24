@@ -40,6 +40,7 @@ func _on_player_interact() -> void:
 	else:
 		printerr("No Item in Chest!")
 		push_error("No Item in Chest! Chest Name: ", name)
+	interaction_area.queue_free()
 
 func _set_item_data(value: ItemData) -> void:
 	item_data = value
