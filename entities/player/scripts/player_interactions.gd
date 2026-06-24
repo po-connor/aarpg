@@ -25,6 +25,9 @@ func unregister(node: Node2D) -> void:
 	var index: int = interactables_in_range.find(node)
 	if index >= 0:
 		interactables_in_range.remove_at(index)
+	if node.tree_exiting.is_connected(unregister.bind(node)):
+		node.tree_exiting.disconnect(unregister.bind(node))
+
 
 func update_direction(new_direction: Vector2) -> void:
 	match new_direction:
