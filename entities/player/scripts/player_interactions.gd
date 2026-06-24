@@ -28,6 +28,19 @@ func unregister(node: Node2D) -> void:
 	if node.tree_exiting.is_connected(unregister.bind(node)):
 		node.tree_exiting.disconnect(unregister.bind(node))
 
+func get_nearest() -> Node2D:
+	if interactables_in_range.size() < 1:
+		return null
+	if interactables_in_range.size() == 1:
+		return interactables_in_range[0]
+	var nearest_interactable: Node2D = null
+	var nearest_dist : float = -1.0
+	for interactable in interactables_in_range:
+		var dist : float = interactable.global_position.distance_to(PlayerManager.player.global_position)
+		if nearest_interactable == null or dist < nearest_dist:
+			nearest_interactable = interactable
+			nearest_dist = dist
+	return nearest_interactable
 
 func update_direction(new_direction: Vector2) -> void:
 	match new_direction:

@@ -16,5 +16,6 @@ func _on_area_exited(area: Node2D) -> void:
 		PlayerManager.player.interactions.unregister(self)
 		PlayerManager.player.interact_pressed.disconnect(_on_player_interact_pressed)
 
-func _on_player_interact_pressed() -> void:
-	interacted.emit()
+func _on_player_interact_pressed(target: Node2D) -> void:
+	if target == self:
+		interacted.emit()

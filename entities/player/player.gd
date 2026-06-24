@@ -1,7 +1,6 @@
 class_name Player extends Entity
 
-@warning_ignore("unused_signal")
-signal interact_pressed
+signal interact_pressed(target: Node2D)
 
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
 @onready var interactions: PlayerInteractions = $Interactions
@@ -21,6 +20,12 @@ func _process(_delta: float) -> void:
 		Input.get_axis("up", "down")
 	).normalized()
 	interaction_notification.visible = interactions.interactables_in_range.size() > 0
+
+func interact() -> void:
+	var target: Node2D = interactions.get_nearest()
+	if target == null:
+		return
+	interact_pressed.emit(target)
 
 func update_hp(delta: int) -> void:
 	super(delta)
