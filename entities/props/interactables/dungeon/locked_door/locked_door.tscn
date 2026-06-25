@@ -1,0 +1,194 @@
+[gd_scene format=3 uid="uid://cokrty5w2u8nk"]
+
+[ext_resource type="Script" uid="uid://dfkkxbnr4g83v" path="res://entities/props/interactables/dungeon/locked_door/locked_door.gd" id="1_pk1am"]
+[ext_resource type="Texture2D" uid="uid://b0qlhj80jvgxk" path="res://entities/props/interactables/dungeon/sprites/dungeon_props.png" id="2_dgw11"]
+[ext_resource type="Resource" uid="uid://1u707h1ry5h8" path="res://items/resources/key_dungeon.tres" id="2_nmsba"]
+[ext_resource type="AudioStream" uid="uid://de1kbvgjx44hi" path="res://entities/props/interactables/dungeon/locked_door/audio/locked_door.wav" id="3_g01v8"]
+[ext_resource type="PackedScene" uid="uid://b1emmhtrf0hdf" path="res://handlers/persistent_data_handler/persistent_data_handler.tscn" id="3_wkvi0"]
+[ext_resource type="PackedScene" uid="uid://dti0ciu1myocd" path="res://entities/props/interactables/interaction_area/interaction_area.tscn" id="4_aluak"]
+[ext_resource type="AudioStream" uid="uid://c5txr27d627g1" path="res://entities/props/interactables/dungeon/locked_door/audio/unlock_door.wav" id="4_ysilk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfrsm"]
+size = Vector2(64, 66)
+
+[sub_resource type="Animation" id="Animation_nmsba"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_etjvq"]
+resource_name = "close_door"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_g01v8"]
+resource_name = "closed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_2avgu"]
+resource_name = "open_door"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ysilk"]
+resource_name = "opened"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_etjvq"]
+_data = {
+&"RESET": SubResource("Animation_nmsba"),
+&"close_door": SubResource("Animation_etjvq"),
+&"closed": SubResource("Animation_g01v8"),
+&"open_door": SubResource("Animation_2avgu"),
+&"opened": SubResource("Animation_ysilk")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbtny"]
+size = Vector2(48, 20)
+
+[node name="LockedDoor" type="StaticBody2D" unique_id=1868895613]
+process_mode = 3
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_pk1am")
+key_item = ExtResource("2_nmsba")
+locked_audio = ExtResource("3_g01v8")
+unlock_audio = ExtResource("4_ysilk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1308391902]
+position = Vector2(0, -40)
+texture = ExtResource("2_dgw11")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1911173059]
+position = Vector2(0, -31)
+shape = SubResource("RectangleShape2D_cfrsm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=118403482]
+libraries/ = SubResource("AnimationLibrary_etjvq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AnimationPlayer" unique_id=504884965]
+
+[node name="IsOpenData" parent="." unique_id=1418038468 instance=ExtResource("3_wkvi0")]
+
+[node name="InteractionArea" parent="." unique_id=2008095423 instance=ExtResource("4_aluak")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=201253240]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_tbtny")
+debug_color = Color(0.56423974, 0.5585628, 0.017028468, 0.41960785)
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="." unique_id=235182499]

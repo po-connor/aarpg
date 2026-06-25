@@ -18,7 +18,7 @@ func _ready() -> void:
 	_update_texture()
 	if Engine.is_editor_hint():
 		return
-	interaction_area.interacted.connect(_on_player_interact)
+	interaction_area.interacted.connect(_on_player_interact, CONNECT_ONE_SHOT)
 	persistent_data_is_open.data_loaded.connect(_set_chest_state)
 	_set_chest_state()
 

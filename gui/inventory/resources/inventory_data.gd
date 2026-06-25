@@ -66,4 +66,10 @@ func _format_item_from_save(saved_object: Dictionary) -> ItemSlotData:
 	new_slot_data.item_data = load(saved_object.item)
 	new_slot_data.quantity = int(saved_object.quantity)
 	return new_slot_data
-	
+
+func use_item(item: ItemData, quantity: int = 1) -> bool:
+	for s in slots:
+		if s and s.item_data == item and s.quantity >= quantity:
+			s.quantity -= quantity
+			return true
+	return false

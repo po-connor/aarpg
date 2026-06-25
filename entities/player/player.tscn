@@ -621,10 +621,10 @@ hp = 6
 max_hp = 6
 
 [node name="InteractionNotification" type="Sprite2D" parent="." unique_id=1910289770]
-visible = false
-position = Vector2(0, -60)
+position = Vector2(28, -61)
 texture = ExtResource("17_3wlsy")
-hframes = 3
+hframes = 4
+frame = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1769037919]
 position = Vector2(0, -21)

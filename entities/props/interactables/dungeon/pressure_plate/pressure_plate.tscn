@@ -1,16 +1,12 @@
 [gd_scene format=3 uid="uid://c7d2yx1kw56df"]
 
 [ext_resource type="Script" uid="uid://btf0ywdbrsbgu" path="res://entities/props/interactables/dungeon/pressure_plate/pressure_plate.gd" id="1_r2522"]
-[ext_resource type="PackedScene" uid="uid://dti0ciu1myocd" path="res://entities/props/interactables/interaction_area/interaction_area.tscn" id="2_0w15o"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r2522"]
 load_path = "res://.godot/imported/dungeon_props.png-054c4f96df6d723314ea45a401e192e0.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8fou"]
 size = Vector2(9.5, 8.625)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_brcxg"]
-radius = 19.026299
 
 [node name="PressurePlate" type="Node2D" unique_id=272898808]
 z_index = -1
@@ -31,8 +27,3 @@ position = Vector2(0, -0.3125)
 shape = SubResource("RectangleShape2D_x8fou")
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="." unique_id=1913768230]
-
-[node name="InteractionArea" parent="." unique_id=2008095423 instance=ExtResource("2_0w15o")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1500274367]
-shape = SubResource("CircleShape2D_brcxg")
