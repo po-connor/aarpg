@@ -3,11 +3,10 @@ extends State
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var attack_effect_animation_player: AnimationPlayer = $"../../Sprite2D/AttackEffectSprite/AttackEffectAnimationPlayer"
 @onready var audio: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
-#@onready var hurt_box: HurtBox = %AttackHurtBox
 @onready var hit_box: HitBox = $"../../Sprite2D/HitBox"
 
 @export var attack_sound: AudioStream
-@export_range(1,20,0.5) var decelerate_speed: float = 5.0
+@export_range(1,20,0.5) var decelerate_speed: float = 10.0
 
 var attacking: bool = false
 
@@ -31,6 +30,7 @@ func exit() -> void:
 
 func process(_delta: float) -> void:
 	super(_delta)
+	#_entity.velocity = Vector2.ZERO
 	_entity.velocity -= _entity.velocity * decelerate_speed * _delta
 	if attacking == false:
 		if _entity.direction == Vector2.ZERO:
