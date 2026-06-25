@@ -60,7 +60,7 @@ func drop_items() -> void:
 			var drop_instance: ItemPickup = PICKUP.instantiate() as ItemPickup
 			drop_instance.item_data = drop.item
 			var pos: Vector2 = _entity.global_position
-			var parent: Node2D = _entity.get_parent()
-			parent.call_deferred("add_child", drop_instance)
+			var scene: Node2D = _entity.get_tree().current_scene
+			scene.call_deferred("add_child", drop_instance)
 			drop_instance.call_deferred("set", "global_position", pos)
 			drop_instance.call_deferred("set", "linear_velocity", _entity.velocity.rotated(randf_range(-1.5, 1.5)) * randf_range(0.9, 1.5))

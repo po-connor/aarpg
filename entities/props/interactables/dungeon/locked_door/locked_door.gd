@@ -42,7 +42,6 @@ func close_door() -> void:
 
 func set_state() -> void:
 	is_open = is_open_data.value
-	print("SET STATE :: ",  is_open)
 	if is_open:
 		animation_player.play("opened")
 	else:
