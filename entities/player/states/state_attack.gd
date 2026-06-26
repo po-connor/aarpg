@@ -30,7 +30,6 @@ func exit() -> void:
 
 func process(_delta: float) -> void:
 	super(_delta)
-	#_entity.velocity = Vector2.ZERO
 	_entity.velocity -= _entity.velocity * decelerate_speed * _delta
 	if attacking == false:
 		if _entity.direction == Vector2.ZERO:

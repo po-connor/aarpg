@@ -17,11 +17,8 @@ func _ready() -> void:
 	set_state()
 
 func _on_player_interact() -> void:
-	if is_open:
-		if interaction_area.interacted.is_connected(_on_player_interact):
-			interaction_area.interacted.disconnect(_on_player_interact)
-		return
-	open_door()
+	if not is_open:
+		open_door()
 
 func open_door() -> void:
 	if key_item == null:
@@ -32,11 +29,14 @@ func open_door() -> void:
 		animation_player.play("open_door")
 		audio.stream = unlock_audio
 		is_open_data.set_value()
+		is_open = true
+		interaction_area.interacted.disconnect(_on_player_interact)
 	else:
 		audio.stream = locked_audio
 	audio.play()
 
 
+# Currently unused
 func close_door() -> void: 
 	animation_player.play("close_door")
 

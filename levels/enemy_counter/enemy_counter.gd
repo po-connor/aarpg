@@ -9,7 +9,6 @@ func _on_enemy_destroyed(e: Node2D) -> void:
 	if e is Enemy:
 		if enemy_count() <= 1:
 			enemies_defeated.emit()
-	pass
 
 func enemy_count() -> int:
 	var count: int = 0

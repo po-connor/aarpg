@@ -34,7 +34,9 @@ func _ready() -> void:
 
 func _set_item_data(value: ItemData) -> void:
 	item_data = value
-	_update_texture()
+	if Engine.is_editor_hint():
+		_update_texture()
+		return
 
 func _update_texture() -> void:
 	if Engine.is_editor_hint():

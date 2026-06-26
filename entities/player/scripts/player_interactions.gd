@@ -31,8 +31,6 @@ func unregister(node: InteractionArea) -> void:
 func get_nearest() -> InteractionArea:
 	if interactables_in_range.size() < 1:
 		return null
-	if interactables_in_range.size() == 1:
-		return interactables_in_range[0]
 	var nearest_interactable: Node2D = null
 	var nearest_dist : float = -1.0
 	for interactable in interactables_in_range:

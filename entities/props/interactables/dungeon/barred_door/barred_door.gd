@@ -1,4 +1,4 @@
-extends Node2D
+class_name BarredDoor extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var is_open: bool = false
