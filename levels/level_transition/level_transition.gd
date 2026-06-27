@@ -54,7 +54,6 @@ func _update_area() -> void:
 
 func _player_entered(_player: Node2D) -> void:
 	LevelManager.load_new_level(level, target_transition_area, _get_offset())
-	pass
 
 func _place_player() -> void:
 	if name != LevelManager.target_transition:
