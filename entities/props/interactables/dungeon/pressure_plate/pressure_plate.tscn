@@ -10,6 +10,7 @@ load_path = "res://.godot/imported/dungeon_props.png-054c4f96df6d723314ea45a401e
 size = Vector2(9.5, 8.625)
 
 [node name="PressurePlate" type="Node2D" unique_id=272898808]
+process_mode = 3
 z_index = -1
 script = ExtResource("1_r2522")
 
