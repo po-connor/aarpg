@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c7d2yx1kw56df"]
 
 [ext_resource type="Script" uid="uid://btf0ywdbrsbgu" path="res://entities/props/interactables/dungeon/pressure_plate/pressure_plate.gd" id="1_r2522"]
+[ext_resource type="PackedScene" uid="uid://b1emmhtrf0hdf" path="res://handlers/persistent_data_handler/persistent_data_handler.tscn" id="2_0w15o"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r2522"]
 load_path = "res://.godot/imported/dungeon_props.png-054c4f96df6d723314ea45a401e192e0.ctex"
@@ -27,3 +28,5 @@ position = Vector2(0, -0.3125)
 shape = SubResource("RectangleShape2D_x8fou")
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="." unique_id=1913768230]
+
+[node name="DataHandler" parent="." unique_id=1418038468 instance=ExtResource("2_0w15o")]

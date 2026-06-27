@@ -264,4 +264,4 @@ position = Vector2(0, 11)
 shape = SubResource("CircleShape2D_d4s37")
 debug_color = Color(0.1411179, 0.64017075, 0.26071477, 0.41960785)
 
-[node name="PersistentDataIsOpen" parent="." unique_id=1418038468 instance=ExtResource("5_q4456")]
+[node name="DataHandler" parent="." unique_id=1418038468 instance=ExtResource("5_q4456")]

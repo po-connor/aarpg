@@ -182,7 +182,7 @@ libraries/ = SubResource("AnimationLibrary_etjvq")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AnimationPlayer" unique_id=504884965]
 
-[node name="IsOpenData" parent="." unique_id=1418038468 instance=ExtResource("3_wkvi0")]
+[node name="DataHandler" parent="." unique_id=1418038468 instance=ExtResource("3_wkvi0")]
 
 [node name="InteractionArea" parent="." unique_id=2008095423 instance=ExtResource("4_aluak")]
 

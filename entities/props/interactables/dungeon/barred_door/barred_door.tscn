@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cie3lop56xxaj" path="res://entities/props/interactables/dungeon/barred_door/barred_door.gd" id="1_1kceq"]
 [ext_resource type="Texture2D" uid="uid://b0qlhj80jvgxk" path="res://entities/props/interactables/dungeon/sprites/dungeon_props.png" id="2_bpa7x"]
 [ext_resource type="AudioStream" uid="uid://cl060ghcew68r" path="res://entities/props/interactables/dungeon/barred_door/audio/bars_open.wav" id="3_mu3ll"]
+[ext_resource type="PackedScene" uid="uid://b1emmhtrf0hdf" path="res://handlers/persistent_data_handler/persistent_data_handler.tscn" id="4_p8gf0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpa7x"]
 size = Vector2(64, 67)
@@ -207,3 +208,5 @@ libraries/ = SubResource("AnimationLibrary_ogw22")
 autoplay = &"closed"
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="." unique_id=513998964]
+
+[node name="DataHandler" parent="." unique_id=1418038468 instance=ExtResource("4_p8gf0")]
