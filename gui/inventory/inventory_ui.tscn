@@ -76,7 +76,8 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 12
 
 [node name="ItemDescriptionLabel" type="Label" parent="VBoxContainer/ItemDescriptionPanel/VBoxContainer" unique_id=1125460722]
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(176, 30)
+custom_maximum_size = Vector2(176, -1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 autowrap_mode = 2

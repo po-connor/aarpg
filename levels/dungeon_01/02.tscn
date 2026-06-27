@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bw6tim3l0sepa" path="res://items/item_pickup/item_pickup.tscn" id="5_ghfwl"]
 [ext_resource type="Resource" uid="uid://1u707h1ry5h8" path="res://items/resources/key_dungeon.tres" id="6_6jfx3"]
 [ext_resource type="PackedScene" uid="uid://cokrty5w2u8nk" path="res://entities/props/interactables/dungeon/locked_door/locked_door.tscn" id="7_6jfx3"]
+[ext_resource type="Resource" uid="uid://dsjot8ebsf5se" path="res://items/resources/apple.tres" id="8_sg736"]
 
 [node name="02" type="Node2D" unique_id=977967284]
 script = ExtResource("1_cfns5")
@@ -39,9 +40,13 @@ target_transition_area = "LevelTransitionLeft"
 center_player = false
 side = 1
 
-[node name="ItemPickup" parent="." unique_id=1542577602 instance=ExtResource("5_ghfwl")]
-position = Vector2(216, 160)
-item_data = ExtResource("6_6jfx3")
-
 [node name="LockedDoor" parent="." unique_id=1868895613 instance=ExtResource("7_6jfx3")]
 position = Vector2(320, 120)
+
+[node name="ItemPickup" parent="." unique_id=1542577602 instance=ExtResource("5_ghfwl")]
+position = Vector2(254, 187)
+item_data = ExtResource("6_6jfx3")
+
+[node name="ItemPickup2" parent="." unique_id=1924378560 instance=ExtResource("5_ghfwl")]
+position = Vector2(390, 189)
+item_data = ExtResource("8_sg736")

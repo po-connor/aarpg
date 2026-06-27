@@ -19,4 +19,4 @@ text = "ITEM DROP"
 [node name="Audio" type="AudioStreamPlayer" parent="." unique_id=1937831673]
 stream = ExtResource("2_swvut")
 
-[node name="HasDroppedData" parent="." unique_id=1418038468 instance=ExtResource("3_7ayc0")]
+[node name="DataHandler" parent="." unique_id=1418038468 instance=ExtResource("3_7ayc0")]

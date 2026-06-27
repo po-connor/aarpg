@@ -71,5 +71,6 @@ func use_item(item: ItemData, quantity: int = 1) -> bool:
 	for s in slots:
 		if s and s.item_data == item and s.quantity >= quantity:
 			s.quantity -= quantity
+			emit_changed()
 			return true
 	return false

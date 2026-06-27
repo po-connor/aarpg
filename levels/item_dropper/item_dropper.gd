@@ -5,7 +5,7 @@ const PICKUP = preload("uid://bw6tim3l0sepa")
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var audio: AudioStreamPlayer = $Audio
-@onready var has_dropped_data: PersistentDataHandler = $HasDroppedData
+@onready var data_handler: PersistentDataHandler = $DataHandler
 
 @export var item_data: ItemData: set = _set_item_data
 
@@ -22,14 +22,14 @@ func drop_item() -> void:
 	drop.picked_up.connect(_on_picked_up)
 
 func _on_picked_up() -> void:
-	has_dropped_data.set_value()
+	data_handler.set_value("has_dropped", true)
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		_update_texture()
 		return
 	sprite_2d.visible = false
-	has_dropped_data.data_loaded.connect(_on_data_loaded)
+	data_handler.data_loaded.connect(_on_data_loaded)
 	_on_data_loaded()
 
 func _set_item_data(value: ItemData) -> void:
@@ -45,4 +45,4 @@ func _update_texture() -> void:
 		return
 
 func _on_data_loaded() -> void:
-	has_dropped = has_dropped_data.value
+	has_dropped = data_handler.get_value("has_dropped") or false

@@ -19,6 +19,7 @@ func _on_inventory_changed() -> void:
 
 func _visibility_changed() -> void:
 	if is_visible_in_tree():
+		_clear_inventory()
 		_update_inventory()
 	else:
 		focused_slot_index = 0
