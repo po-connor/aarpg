@@ -22,7 +22,7 @@ func _get_name() -> String:
 
 func _get_save_data() -> void:
 	var saved_data: Dictionary = SaveManager.get_persistent_data(_get_name())
-	if saved_data:
+	if not saved_data.is_empty():
 		data = saved_data
 		data_loaded.emit()
 

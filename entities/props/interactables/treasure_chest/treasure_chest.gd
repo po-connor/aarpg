@@ -20,11 +20,10 @@ func _ready() -> void:
 		return
 	interaction_area.interacted.connect(_on_player_interact, CONNECT_ONE_SHOT)
 	data_handler.data_loaded.connect(_set_chest_state)
-	#persistent_data_is_open.data_loaded.connect(_set_chest_state)
 	_set_chest_state()
 
 func _set_chest_state() -> void:
-	is_open = data_handler.get_value("is_open")
+	is_open = data_handler.get_value("is_open") or false
 	if is_open:
 		animation_player.play("opened")
 	else:
