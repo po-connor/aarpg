@@ -47,6 +47,8 @@ _data = {
 radius = 16.03122
 
 [node name="Boomerang" type="Node2D" unique_id=1840907553]
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_trv0v")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=754920958]

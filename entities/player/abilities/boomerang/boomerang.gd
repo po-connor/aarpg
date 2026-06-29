@@ -40,6 +40,11 @@ func _process(delta: float) -> void:
 		receive()
 	if state == BOOMERANG_STATE.RECEIVE and PlayerManager.player.abilities.global_position.distance_to(global_position) < catch_range:
 		catch()
+	var speed_ratio: float = speed / throw_speed
+	if audio and audio.stream == BOOMERANG_THROW_AUDIO and audio.playing:
+		audio.pitch_scale = speed_ratio + randf_range(1.0, 1.5) 
+	if animation_player and animation_player.is_playing():
+		animation_player.speed_scale = randf_range(1, 1.25) - speed_ratio
 
 func update_receive_direction() -> void:
 	if state != BOOMERANG_STATE.RECEIVE:

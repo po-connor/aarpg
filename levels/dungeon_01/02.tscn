@@ -44,9 +44,9 @@ side = 1
 position = Vector2(320, 120)
 
 [node name="ItemPickup" parent="." unique_id=1542577602 instance=ExtResource("5_ghfwl")]
-position = Vector2(254, 187)
+position = Vector2(256, 191)
 item_data = ExtResource("6_6jfx3")
 
 [node name="ItemPickup2" parent="." unique_id=1924378560 instance=ExtResource("5_ghfwl")]
-position = Vector2(390, 189)
+position = Vector2(384, 192)
 item_data = ExtResource("8_sg736")
