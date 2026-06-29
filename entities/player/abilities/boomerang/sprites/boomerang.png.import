@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://de1bxoaf02wat"
-path="res://.godot/imported/boomerang.png-69ab0e014a49c84b4342160130c89a8a.ctex"
+path="res://.godot/imported/boomerang.png-ee33b7c5e6b2e9bd718a45e3ee885ca5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/player/sprites/boomerang.png"
-dest_files=["res://.godot/imported/boomerang.png-69ab0e014a49c84b4342160130c89a8a.ctex"]
+source_file="res://entities/player/abilities/boomerang/sprites/boomerang.png"
+dest_files=["res://.godot/imported/boomerang.png-ee33b7c5e6b2e9bd718a45e3ee885ca5.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://du26cejl5ot2v"]
 
-[ext_resource type="Texture2D" uid="uid://de1bxoaf02wat" path="res://entities/player/sprites/boomerang.png" id="1_5l17f"]
+[ext_resource type="Texture2D" uid="uid://de1bxoaf02wat" path="res://entities/player/abilities/boomerang/sprites/boomerang.png" id="1_5l17f"]
 [ext_resource type="PackedScene" uid="uid://d267e3qjehubq" path="res://entities/utility_nodes/hit_box/hit_box.tscn" id="1_rra6l"]
 [ext_resource type="Script" uid="uid://c25jomwngelor" path="res://entities/player/abilities/boomerang/boomerang.gd" id="1_trv0v"]
 

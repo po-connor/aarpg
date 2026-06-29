@@ -24,11 +24,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if state == BOOMERANG_STATE.INACTIVE:
 		return
-	position += direction * speed * delta
+	global_position += direction * speed * delta
 	if state == BOOMERANG_STATE.THROW:
-		speed -= acceleration
+		speed = clampf(speed - acceleration, 0.0, throw_speed)
 	else:
-		speed += acceleration
+		speed = clampf(speed + acceleration, 0.0, throw_speed)
 		update_receive_direction()
 	if state == BOOMERANG_STATE.THROW and speed < 5:
 		receive()
@@ -65,7 +65,3 @@ func catch() -> void:
 	acceleration = 0
 	visible = false
 	caught.emit()
-
-func _on_area_entered(a: Area2D) -> void:
-	if not a is HurtBox:
-		return
