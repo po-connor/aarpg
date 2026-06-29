@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="AARPG"
-run/main_scene="uid://c0rcwljp5dxid"
+run/main_scene="uid://i0eupp3rpy7u"
 config/features=PackedStringArray("4.7", "Forward Plus")
 run/max_fps=60
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://bmdqymf1ds3us"
 
 [autoload]
 

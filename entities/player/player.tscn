@@ -663,7 +663,7 @@ metadata/_custom_type_script = "uid://ir1uf6mx2wrl"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/HitBox" unique_id=379563557]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_apopc")
-debug_color = Color(0, 1, 0, 0.39215687)
+debug_color = Color(0, 1, 0, 0.5411765)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=390686336]
 shape = SubResource("CircleShape2D_edjgo")
