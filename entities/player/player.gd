@@ -5,9 +5,12 @@ signal interact_pressed(target: Node2D)
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
 @onready var interactions: PlayerInteractions = $Interactions
 @onready var interaction_notification: Sprite2D = $InteractionNotification
+@onready var abilities: PlayerAbilities = $Abilities
 
 @export var override_death: bool = false
 @export var push_force: float = 5.0
+
+var boomerang: Boomerang
 
 func _ready() -> void:
 	super()

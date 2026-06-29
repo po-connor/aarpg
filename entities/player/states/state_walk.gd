@@ -25,4 +25,3 @@ func handle_input(_event: InputEvent) -> void:
 		_state_machine.change_state("attack")
 	if _event.is_action_pressed("interact"):
 		(_entity as Player).interact()
-		#(_entity as Player).interact_pressed.emit()

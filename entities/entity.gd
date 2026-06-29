@@ -41,7 +41,7 @@ func update_direction() -> bool:
 	
 	cardinal_direction = new_direction
 	direction_changed.emit(new_direction)
-	sprite.scale.x = 1 if cardinal_direction == Vector2.RIGHT else -1
+	sprite.flip_h = false if cardinal_direction == Vector2.RIGHT else true
 	return true
 
 func update_animation(state: String) -> void:
