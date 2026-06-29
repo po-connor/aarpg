@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://d0qvih0usgnvp" path="res://items/resources/stone.tres" id="7_k865y"]
 [ext_resource type="Resource" uid="uid://b1y2o87cmew1w" path="res://items/resources/potion.tres" id="8_fxjhj"]
 [ext_resource type="PackedScene" uid="uid://21t22vjvneei" path="res://entities/enemies/slime/slime.tscn" id="9_wwtle"]
+[ext_resource type="Resource" uid="uid://8qgcg0rmriho" path="res://items/resources/gem.tres" id="10_fxjhj"]
 
 [node name="Playground" type="Node2D" unique_id=553348400]
 script = ExtResource("1_n1ku5")
@@ -54,3 +55,11 @@ position = Vector2(470, 142)
 
 [node name="Slime2" parent="." unique_id=999017060 instance=ExtResource("9_wwtle")]
 position = Vector2(509, 166)
+
+[node name="ItemPickup7" parent="." unique_id=32647362 instance=ExtResource("6_fxjhj")]
+position = Vector2(273, 234)
+item_data = ExtResource("5_k865y")
+
+[node name="ItemPickup8" parent="." unique_id=1343143416 instance=ExtResource("6_fxjhj")]
+position = Vector2(390, 236)
+item_data = ExtResource("10_fxjhj")
