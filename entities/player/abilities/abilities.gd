@@ -27,8 +27,9 @@ func boomerang_ability() -> void:
 
 func _destroy_boomerang() -> void:
 	if boomerang_instance:
-		boomerang_instance.queue_free()
+		var instance: Boomerang = boomerang_instance
 		boomerang_instance = null
+		instance.queue_free()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ability"):
