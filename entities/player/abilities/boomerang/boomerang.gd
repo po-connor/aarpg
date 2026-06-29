@@ -8,7 +8,9 @@ signal caught
 enum BOOMERANG_STATE { INACTIVE, THROW, RECEIVE }
 
 @export var throw_speed: float = 550.0
+@export var throw_min_speed: float = 5.0
 @export var throw_acceleration: float = 20.0
+@export var catch_range: float = 10.0
 
 var state : BOOMERANG_STATE = BOOMERANG_STATE.THROW
 var direction: Vector2
@@ -26,13 +28,13 @@ func _process(delta: float) -> void:
 		return
 	global_position += direction * speed * delta
 	if state == BOOMERANG_STATE.THROW:
-		speed = clampf(speed - acceleration, 0.0, throw_speed)
+		speed = clampf(speed - acceleration, throw_min_speed, throw_speed)
 	else:
-		speed = clampf(speed + acceleration, 0.0, throw_speed)
+		speed = clampf(speed + acceleration, throw_min_speed, throw_speed)
 		update_receive_direction()
-	if state == BOOMERANG_STATE.THROW and speed < 5:
+	if state == BOOMERANG_STATE.THROW and speed <= throw_min_speed:
 		receive()
-	if state == BOOMERANG_STATE.RECEIVE and PlayerManager.player.abilities.global_position.distance_to(global_position) < 15:
+	if state == BOOMERANG_STATE.RECEIVE and PlayerManager.player.abilities.global_position.distance_to(global_position) < catch_range:
 		catch()
 
 func update_receive_direction() -> void:
