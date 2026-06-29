@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="AARPG"
-run/main_scene="uid://l2ae04xvynkh"
+run/main_scene="uid://c0rcwljp5dxid"
 config/features=PackedStringArray("4.7", "Forward Plus")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [autoload]
@@ -91,6 +92,7 @@ ability={
 2d_physics/layer_3="PlayerHitBox"
 2d_physics/layer_4="PlayerInteract"
 2d_physics/layer_5="Walls"
+2d_physics/layer_6="Items"
 2d_physics/layer_9="Enemy"
 2d_physics/layer_10="EnemyHurtBox"
 2d_physics/layer_11="EnemyHitBox"

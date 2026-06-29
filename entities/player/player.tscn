@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://0thm7vqngogr" path="res://entities/player/scripts/push_area.gd" id="16_yqrof"]
 [ext_resource type="Texture2D" uid="uid://qusuluiudyhn" path="res://entities/player/sprites/interactions.png" id="17_3wlsy"]
 [ext_resource type="PackedScene" uid="uid://ctl4mo4muiyu8" path="res://entities/player/abilities/abilities.tscn" id="19_we0b7"]
+[ext_resource type="PackedScene" uid="uid://4n4t76civeqi" path="res://entities/utility_nodes/item_magnet/item_magnet.tscn" id="20_mtric"]
 
 [sub_resource type="Animation" id="Animation_5htga"]
 length = 0.001
@@ -611,6 +612,9 @@ size = Vector2(20, 27)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gx6sm"]
 size = Vector2(20, 14.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cfrsm"]
+radius = 30.016663
+
 [node name="Player" type="CharacterBody2D" unique_id=1245228653 node_paths=PackedStringArray("hitbox")]
 collision_mask = 17
 motion_mode = 1
@@ -734,3 +738,10 @@ debug_color = Color(0.8315052, 0.20459622, 0.8215056, 0.41960785)
 
 [node name="Abilities" parent="." unique_id=1239185320 instance=ExtResource("19_we0b7")]
 position = Vector2(0, -20)
+
+[node name="ItemMagnet" parent="." unique_id=1557770174 instance=ExtResource("20_mtric")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemMagnet" unique_id=2088165491]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_cfrsm")
+debug_color = Color(0.7767174, 0.35884026, 0.66141135, 0.41960785)

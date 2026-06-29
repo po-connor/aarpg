@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://de1bxoaf02wat" path="res://entities/player/abilities/boomerang/sprites/boomerang.png" id="1_5l17f"]
 [ext_resource type="PackedScene" uid="uid://d267e3qjehubq" path="res://entities/utility_nodes/hit_box/hit_box.tscn" id="1_rra6l"]
 [ext_resource type="Script" uid="uid://c25jomwngelor" path="res://entities/player/abilities/boomerang/boomerang.gd" id="1_trv0v"]
+[ext_resource type="PackedScene" uid="uid://4n4t76civeqi" path="res://entities/utility_nodes/item_magnet/item_magnet.tscn" id="4_jw23r"]
 
 [sub_resource type="Animation" id="Animation_5l17f"]
 length = 0.001
@@ -46,9 +47,10 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_5l17f"]
 radius = 16.03122
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cfrsm"]
+radius = 23.021729
+
 [node name="Boomerang" type="Node2D" unique_id=1840907553]
-z_index = 1
-y_sort_enabled = true
 script = ExtResource("1_trv0v")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=754920958]
@@ -68,3 +70,9 @@ damage = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=2145173182]
 shape = SubResource("CircleShape2D_5l17f")
+
+[node name="ItemMagnet" parent="." unique_id=1557770174 instance=ExtResource("4_jw23r")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemMagnet" unique_id=844323199]
+shape = SubResource("CircleShape2D_cfrsm")
+debug_color = Color(0.8691466, 0.31270924, 0.4294707, 0.41960785)

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://4n4t76civeqi"]
+
+[ext_resource type="Script" uid="uid://b0jk7frxktyi" path="res://entities/utility_nodes/item_magnet/item_magnet.gd" id="1_guhka"]
+
+[node name="ItemMagnet" type="Area2D" unique_id=1557770174]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("1_guhka")

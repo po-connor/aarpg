@@ -9,6 +9,20 @@ signal picked_up
 
 @export var item_data: ItemData: set = _set_item_data
 
+var magnet_target: Node2D
+var magnet_linear_force: float
+
+func flyToTarget(target: Node2D, linear_force: float = 50) -> void:
+	magnet_target = target
+	magnet_linear_force = linear_force
+	set_collision_mask_value(5, false)
+
+func _physics_process(_delta: float) -> void:
+	if magnet_target:
+		var dist: float = position.distance_to(magnet_target.global_position)
+		var dir: Vector2 = position.direction_to(magnet_target.global_position)
+		constant_force = dir * magnet_linear_force * dist
+
 func _ready() -> void:
 	gravity_scale = 0.0
 	linear_damp = 5.0
