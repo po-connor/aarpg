@@ -2,14 +2,14 @@ class_name Boomerang extends Node2D
 
 signal caught
 
+const BOOMERANG_THROW_AUDIO = preload("uid://b6w8phqpv30b4")
+const BOOMERANG_CATCH_AUDIO = preload("uid://dkhft101yvrl3")
+
+enum BOOMERANG_STATE { INACTIVE, THROW, RECEIVE }
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hit_box: HitBox = $HitBox
 @onready var audio: AudioStreamPlayer2D = $Audio
-
-const THROW_AUDIO = preload("uid://b6w8phqpv30b4")
-const CATCH_AUDIO = preload("uid://dkhft101yvrl3")
-
-enum BOOMERANG_STATE { INACTIVE, THROW, RECEIVE }
 
 @export var throw_speed: float = 550.0
 @export var throw_min_speed: float = 5.0
@@ -56,6 +56,8 @@ func throw() -> void:
 	speed = throw_speed
 	acceleration = throw_acceleration
 	visible = true
+	audio.stream = BOOMERANG_THROW_AUDIO
+	audio.play()
 
 func receive() -> void:
 	if not state == BOOMERANG_STATE.THROW:
@@ -70,4 +72,7 @@ func catch() -> void:
 	speed = 0
 	acceleration = 0
 	visible = false
+	audio.stream = BOOMERANG_CATCH_AUDIO
+	audio.play()
+	await audio.finished
 	caught.emit()
