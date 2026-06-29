@@ -4,6 +4,10 @@ signal caught
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hit_box: HitBox = $HitBox
+@onready var audio: AudioStreamPlayer2D = $Audio
+
+const THROW_AUDIO = preload("uid://b6w8phqpv30b4")
+const CATCH_AUDIO = preload("uid://dkhft101yvrl3")
 
 enum BOOMERANG_STATE { INACTIVE, THROW, RECEIVE }
 
