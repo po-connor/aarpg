@@ -4,10 +4,10 @@ signal data_loaded
 
 var data: Dictionary = {}
 
-func get_value(key: String) -> Variant:
+func get_value(key: String, default: Variant = null) -> Variant:
 	if data.has(key):
 		return data.get(key)
-	return null
+	return default
 
 func set_value(key: String, value: Variant) -> void:
 	data.set(key, value)
@@ -15,7 +15,6 @@ func set_value(key: String, value: Variant) -> void:
 
 func _ready() -> void:
 	_get_save_data()
-	pass
 
 func _get_name() -> String:
 	return get_tree().current_scene.scene_file_path + "/" + get_parent().name + "/" + name

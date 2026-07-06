@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c8vv686s1e0db" path="res://levels/level_transition/level_transition.tscn" id="3_uoqcb"]
 [ext_resource type="PackedScene" uid="uid://dbhv13lwe7daf" path="res://levels/player_spawn/player_spawn.tscn" id="4_fnv85"]
 [ext_resource type="PackedScene" uid="uid://jjaf3xhqrg" path="res://levels/enemy_counter/enemy_counter.tscn" id="5_lkqfa"]
-[ext_resource type="PackedScene" uid="uid://21t22vjvneei" path="res://entities/enemies/slime/slime.tscn" id="6_mq3of"]
+[ext_resource type="PackedScene" uid="uid://kx5f2fqw1t8v" path="res://entities/enemies/goblin/goblin.tscn" id="6_h5135"]
 [ext_resource type="PackedScene" uid="uid://baav2qqa4qix2" path="res://levels/item_dropper/item_dropper.tscn" id="7_iyye2"]
 [ext_resource type="Resource" uid="uid://1u707h1ry5h8" path="res://items/resources/key_dungeon.tres" id="8_yavya"]
 
@@ -27,11 +27,11 @@ position = Vector2(232, 264)
 
 [node name="EnemyCounter" parent="." unique_id=1646014434 instance=ExtResource("5_lkqfa")]
 
-[node name="Slime2" parent="EnemyCounter" unique_id=43830155 instance=ExtResource("6_mq3of")]
-position = Vector2(250, 336)
+[node name="Goblin" parent="EnemyCounter" unique_id=43830155 instance=ExtResource("6_h5135")]
+position = Vector2(312, 160)
 
-[node name="Slime" parent="EnemyCounter" unique_id=1084288300 instance=ExtResource("6_mq3of")]
-position = Vector2(269, 159)
+[node name="Goblin2" parent="EnemyCounter" unique_id=1428406095 instance=ExtResource("6_h5135")]
+position = Vector2(256, 344)
 
 [node name="ItemDropper" parent="." unique_id=1469149571 instance=ExtResource("7_iyye2")]
 position = Vector2(360, 256)

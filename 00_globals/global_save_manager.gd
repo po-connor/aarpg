@@ -15,7 +15,8 @@ var current_save: Dictionary = {
 	},
 	items = [],
 	persistence = {},
-	quests = []
+	quests = [],
+	abilities = []
 }
 
 func save_file_exists() -> bool:
@@ -25,6 +26,7 @@ func save_game() -> void:
 	update_player_data()
 	update_scene_path()
 	update_item_data()
+	update_abilities()
 	var file: FileAccess = FileAccess.open( SAVE_PATH + "save.sav", FileAccess.WRITE)
 	var save_json: String = JSON.stringify(current_save)
 	file.store_line(save_json)
@@ -45,6 +47,11 @@ func load_game() -> void:
 	PlayerManager.set_player_position(Vector2(current_save.player.pos_x, current_save.player.pos_y))
 	PlayerManager.set_player_health(current_save.player.hp, current_save.player.max_hp)
 	PlayerManager.INVENTORY_DATA.parse_saved_items(current_save.items)
+	if current_save.abilities:
+		for path in current_save.abilities:
+			var ability: AbilityData = load(path)
+			if ability:
+				PlayerManager.player.abilities.unlock(ability)
 	await LevelManager.level_loaded
 	game_loaded.emit()
 
@@ -64,6 +71,11 @@ func update_scene_path() -> void:
 
 func update_item_data() -> void:
 	current_save.items = PlayerManager.INVENTORY_DATA.get_saved_data()
+
+func update_abilities() -> void:
+	current_save.abilities = PlayerManager.player.abilities.unlocked_abilities.map(
+		func(a): return a.data.resource_path
+	)
 
 func save_persistent_data(key: String, value: Dictionary) -> void:
 	current_save.persistence.set(key, value)
