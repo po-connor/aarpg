@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c8jtdlu2jc0va"]
+
+[ext_resource type="Script" uid="uid://cb5vt5dmubtk4" path="res://gui/abilities/abilities_ui.gd" id="1_qf06h"]
+
+[node name="AbilitiesUi" type="Control" unique_id=1015628290]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -590.0
+offset_bottom = -303.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qf06h")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1714887361]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

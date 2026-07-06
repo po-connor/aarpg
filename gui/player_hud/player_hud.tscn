@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://88ky76hsq7h2" path="res://gui/player_hud/player_hud.gd" id="1_6gnlv"]
 [ext_resource type="Texture2D" uid="uid://c5d2shapoqukr" path="res://gui/player_hud/sprites/gui_health.png" id="1_ku0bp"]
 [ext_resource type="PackedScene" uid="uid://bthsxvkpgs4bq" path="res://gui/player_hud/heart_gui/heart_gui.tscn" id="2_6gnlv"]
+[ext_resource type="PackedScene" uid="uid://c8jtdlu2jc0va" path="res://gui/abilities/abilities_ui.tscn" id="4_aucyw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2qcy"]
 atlas = ExtResource("1_ku0bp")
@@ -121,3 +122,10 @@ layout_mode = 2
 
 [node name="Heart20" parent="Control/Control/HFlowContainer" unique_id=410044591 instance=ExtResource("2_6gnlv")]
 layout_mode = 2
+
+[node name="AbilitiesUi" parent="Control" unique_id=1015628290 instance=ExtResource("4_aucyw")]
+layout_mode = 1
+offset_left = 554.0
+offset_top = 268.0
+offset_right = -36.0
+offset_bottom = -35.0
