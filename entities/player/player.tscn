@@ -679,6 +679,7 @@ script = ExtResource("11_5htga")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio" unique_id=584371251]
 max_polyphony = 4
+bus = &"SFX"
 
 [node name="StateMachine" parent="." unique_id=1515907059 instance=ExtResource("8_iplt1")]
 

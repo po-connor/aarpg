@@ -815,6 +815,7 @@ state_name = "destroy"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=292375807]
 max_polyphony = 4
+bus = &"SFX"
 
 [node name="DestroyEffectSprite" type="Sprite2D" parent="." unique_id=1387730682]
 visible = false

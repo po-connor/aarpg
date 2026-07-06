@@ -8,7 +8,6 @@ signal interact_pressed(target: Node2D)
 @onready var abilities: PlayerAbilities = $Abilities
 
 @export var override_death: bool = false
-@export var push_force: float = 5.0
 
 var boomerang: Boomerang
 
