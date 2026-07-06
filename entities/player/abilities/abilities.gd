@@ -5,7 +5,7 @@ const BOOMERANG = preload("uid://du26cejl5ot2v")
 enum Abilities { BOOMERANG }
 
 var abilities_dict : Dictionary[int, Callable] = {
-	Abilities.BOOMERANG: boomerang_ability 
+	#Abilities.BOOMERANG: boomerang_ability
 }
 
 var selected_ability = Abilities.BOOMERANG
@@ -33,6 +33,6 @@ func _destroy_boomerang() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ability"):
-		var ability_callable: Callable = abilities_dict.get(selected_ability)
+		var ability_callable: Variant = abilities_dict.get(selected_ability)
 		if ability_callable:
 			ability_callable.call()
