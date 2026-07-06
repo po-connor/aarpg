@@ -1,6 +1,6 @@
 extends State
 
-@export var move_speed: float = 100.0
+@export var move_speed: float = 150.0
 
 func enter() -> void:
 	super()
