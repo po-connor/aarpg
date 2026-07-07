@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjsjd53356348"]
 
-[ext_resource type="Script" uid="uid://cosp1fbqhldny" path="res://entities/player/abilities/ability_pickup/ability_pickup.gd" id="1_e01yd"]
+[ext_resource type="Script" uid="uid://cosp1fbqhldny" path="res://abilities/ability_pickup/ability_pickup.gd" id="1_e01yd"]
 [ext_resource type="Texture2D" uid="uid://b8bduxd7punv5" path="res://entities/player/sprites/shadow.png" id="2_ffwee"]
 [ext_resource type="PackedScene" uid="uid://b1emmhtrf0hdf" path="res://handlers/persistent_data_handler/persistent_data_handler.tscn" id="3_jfrma"]
 

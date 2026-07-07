@@ -40,7 +40,7 @@ func close_door() -> void:
 	animation_player.play("close_door")
 
 func set_state() -> void:
-	is_open = data_handler.get_value("is_open") or false
+	is_open = data_handler.get_value("is_open", false)
 	if is_open:
 		animation_player.play("opened")
 	else:

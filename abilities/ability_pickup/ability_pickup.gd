@@ -21,7 +21,8 @@ func _set_pickup_state() -> void:
 		queue_free()
 	else:
 		visible = true
-		area_2d.body_entered.connect(_on_body_entered)
+		if not area_2d.body_entered.is_connected(_on_body_entered):
+			area_2d.body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
@@ -40,7 +41,6 @@ func _ability_picked_up() -> void:
 		await audio_stream_player_2d.finished
 	data_handler.set_value("is_picked_up", true)
 	queue_free()
-	visible = false
 
 func _set_ability_data(value: AbilityData) -> void:
 	ability_data = value

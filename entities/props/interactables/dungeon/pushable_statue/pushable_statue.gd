@@ -28,7 +28,7 @@ func _save_position() -> void:
 func _load_position() -> void:
 	var pos_x: float = global_position.x
 	var pos_y: float = global_position.y
-	if data_handler.get_value("pos_x") != null and data_handler.get_value("pos_y") != null:
-		pos_x = float(data_handler.get_value("pos_x"))
-		pos_y = float(data_handler.get_value("pos_y"))
+	if data_handler.get_value("pos_x", null) != null and data_handler.get_value("pos_y", null) != null:
+		pos_x = float(data_handler.get_value("pos_x", 0))
+		pos_y = float(data_handler.get_value("pos_y", 0))
 	global_position = Vector2(pos_x, pos_y)

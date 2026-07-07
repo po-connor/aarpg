@@ -11,10 +11,10 @@ var unlocked_abilities : Array[AbilitiesArrayItem] = []
 var selected_ability_index: int = 0
 
 func unlock(ability_data: AbilityData) -> void:
-	var unlocked_index = _get_ability_index_by_name(unlocked_abilities, ability_data.abiliy_name)
+	var unlocked_index = _get_ability_index(unlocked_abilities, ability_data)
 	if unlocked_index > -1:
 		return
-	var ability_index: int = _get_ability_index_by_name(abilities, ability_data.abiliy_name)
+	var ability_index: int = _get_ability_index(abilities, ability_data)
 	if ability_index < 0:
 		return
 	var item: AbilitiesArrayItem = abilities.get(ability_index)
@@ -47,13 +47,17 @@ func cycle(step: int = 1) -> void:
 		next_index = 0
 	selected_ability_index = next_index
 
-func _filter_is_unlocked(ability: AbilitiesArrayItem) -> bool:
-	return ability.unlocked
+func _get_ability_index(array: Array[AbilitiesArrayItem], data: AbilityData) -> int:
+	for i: int in array.size():
+		if array[i].data == data:
+			return i
+	return -1
+
 
 func _get_ability_index_by_name(array: Array[AbilitiesArrayItem], ability_name: String) -> int:
 	for i: int in array.size():
 		var a: AbilitiesArrayItem = array.get(i)
-		if a and a.data and a.data.abiliy_name == ability_name:
+		if a and a.data and a.data.ability_name == ability_name:
 			return i
 	return -1
 

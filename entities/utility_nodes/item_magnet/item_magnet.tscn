@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://4n4t76civeqi"]
 
 [ext_resource type="Script" uid="uid://b0jk7frxktyi" path="res://entities/utility_nodes/item_magnet/item_magnet.gd" id="1_guhka"]
-[ext_resource type="AudioStream" uid="uid://dkhft101yvrl3" path="res://entities/player/abilities/boomerang/audio/boomerang_catch.wav" id="2_inauj"]
+[ext_resource type="AudioStream" uid="uid://dkhft101yvrl3" path="res://abilities/boomerang/audio/boomerang_catch.wav" id="2_inauj"]
 
 [node name="ItemMagnet" type="Area2D" unique_id=1557770174]
 collision_layer = 0

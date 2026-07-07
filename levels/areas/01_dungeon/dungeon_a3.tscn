@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://drmssoaid62nx" path="res://tile_maps/dungeon_01.tscn" id="2_b46gx"]
 [ext_resource type="PackedScene" uid="uid://c8vv686s1e0db" path="res://levels/level_transition/level_transition.tscn" id="3_ac8mp"]
 [ext_resource type="PackedScene" uid="uid://dbhv13lwe7daf" path="res://levels/player_spawn/player_spawn.tscn" id="4_itkl4"]
-[ext_resource type="PackedScene" uid="uid://cjsjd53356348" path="res://entities/player/abilities/ability_pickup/ability_pickup.tscn" id="5_ac8mp"]
-[ext_resource type="Resource" uid="uid://c3pknpnqnsy4b" path="res://entities/player/abilities/resources/boomerang_ability.tres" id="6_itkl4"]
+[ext_resource type="PackedScene" uid="uid://cjsjd53356348" path="res://abilities/ability_pickup/ability_pickup.tscn" id="5_ac8mp"]
+[ext_resource type="Resource" uid="uid://c3pknpnqnsy4b" path="res://abilities/resources/boomerang_ability.tres" id="6_itkl4"]
 
 [node name="03" type="Node2D" unique_id=870654427]
 script = ExtResource("1_mk0ir")

@@ -23,7 +23,7 @@ func _ready() -> void:
 	_set_chest_state()
 
 func _set_chest_state() -> void:
-	is_open = data_handler.get_value("is_open") or false
+	is_open = data_handler.get_value("is_open", false)
 	if is_open:
 		animation_player.play("opened")
 	else:

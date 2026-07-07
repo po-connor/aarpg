@@ -45,4 +45,4 @@ func _update_texture() -> void:
 		return
 
 func _on_data_loaded() -> void:
-	has_dropped = data_handler.get_value("has_dropped") or false
+	has_dropped = data_handler.get_value("has_dropped", false)

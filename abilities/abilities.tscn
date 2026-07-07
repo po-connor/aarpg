@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctl4mo4muiyu8"]
 
-[ext_resource type="Script" uid="uid://r3w0vxehae6e" path="res://entities/player/abilities/abilities.gd" id="1_in2bu"]
+[ext_resource type="Script" uid="uid://r3w0vxehae6e" path="res://abilities/abilities.gd" id="1_in2bu"]
 
 [node name="Abilities" type="Node2D" unique_id=1572843778]
 script = ExtResource("1_in2bu")

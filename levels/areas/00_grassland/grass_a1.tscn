@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dbhv13lwe7daf" path="res://levels/player_spawn/player_spawn.tscn" id="3_4jvdn"]
 [ext_resource type="PackedScene" uid="uid://c8vv686s1e0db" path="res://levels/level_transition/level_transition.tscn" id="4_oetx4"]
 [ext_resource type="PackedScene" uid="uid://21t22vjvneei" path="res://entities/enemies/slime/slime.tscn" id="5_4jvdn"]
-[ext_resource type="PackedScene" uid="uid://cjsjd53356348" path="res://entities/player/abilities/ability_pickup/ability_pickup.tscn" id="6_k64pb"]
-[ext_resource type="Resource" uid="uid://c3pknpnqnsy4b" path="res://entities/player/abilities/resources/boomerang_ability.tres" id="7_nwfgx"]
+[ext_resource type="PackedScene" uid="uid://cjsjd53356348" path="res://abilities/ability_pickup/ability_pickup.tscn" id="6_k64pb"]
+[ext_resource type="Resource" uid="uid://c3pknpnqnsy4b" path="res://abilities/resources/boomerang_ability.tres" id="7_nwfgx"]
 [ext_resource type="PackedScene" uid="uid://bw6tim3l0sepa" path="res://items/item_pickup/item_pickup.tscn" id="8_offjo"]
 [ext_resource type="Resource" uid="uid://d0qvih0usgnvp" path="res://items/resources/stone.tres" id="9_m1k1t"]
 

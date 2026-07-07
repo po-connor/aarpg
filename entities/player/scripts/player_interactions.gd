@@ -7,15 +7,6 @@ var interactables_in_range: Array[InteractionArea] = []
 func _ready() -> void:
 	player.direction_changed.connect(update_direction)
 
-#func update_interactables() -> void:
-	#var alive_interactables: Array[InteractionArea] = []
-	#for interactable in interactables_in_range:
-		#if is_instance_valid(interactable) and interactable.is_inside_tree():
-			#alive_interactables.append(interactable)
-	#if alive_interactables.size() != interactables_in_range.size():
-		#interactables_in_range.clear()
-		#interactables_in_range.append_array(alive_interactables)
-
 func register(node: InteractionArea) -> void:
 	if not interactables_in_range.has(node):
 		interactables_in_range.append(node)

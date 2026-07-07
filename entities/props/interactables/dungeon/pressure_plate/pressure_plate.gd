@@ -49,7 +49,7 @@ func _deactivate() -> void:
 	deactivated.emit()
 
 func _check_is_activated() -> void:
-	is_active = data_handler.get_value("is_active") or false
+	is_active = data_handler.get_value("is_active", false)
 	if is_active == false and bodies_count > 0:
 		_activate()
 	elif is_active == true and bodies_count <= 0:
@@ -66,5 +66,5 @@ func _update_texture() -> void:
 		sprite.region_rect.position.x = rect_offset.position.x
 
 func _set_state() -> void:
-	is_active = data_handler.get_value("is_active") or false
+	is_active = data_handler.get_value("is_active", false)
 	_update_texture()

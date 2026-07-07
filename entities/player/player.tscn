@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://icep0ghddvet" path="res://entities/player/player_interaction_area/player_interaction_area.gd" id="16_b2kln"]
 [ext_resource type="Script" uid="uid://0thm7vqngogr" path="res://entities/player/scripts/push_area.gd" id="16_yqrof"]
 [ext_resource type="Texture2D" uid="uid://qusuluiudyhn" path="res://entities/player/sprites/interactions.png" id="17_3wlsy"]
-[ext_resource type="PackedScene" uid="uid://ctl4mo4muiyu8" path="res://entities/player/abilities/abilities.tscn" id="19_we0b7"]
+[ext_resource type="PackedScene" uid="uid://ctl4mo4muiyu8" path="res://abilities/abilities.tscn" id="19_we0b7"]
 [ext_resource type="PackedScene" uid="uid://4n4t76civeqi" path="res://entities/utility_nodes/item_magnet/item_magnet.tscn" id="20_mtric"]
 
 [sub_resource type="Animation" id="Animation_5htga"]
