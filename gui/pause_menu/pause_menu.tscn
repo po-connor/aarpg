@@ -73,3 +73,4 @@ offset_bottom = -20.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Control" unique_id=452364795]
 max_polyphony = 4
+bus = &"SFX"

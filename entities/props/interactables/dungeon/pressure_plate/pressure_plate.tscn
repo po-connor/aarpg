@@ -29,5 +29,6 @@ position = Vector2(0, -0.3125)
 shape = SubResource("RectangleShape2D_x8fou")
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="." unique_id=1913768230]
+bus = &"SFX"
 
 [node name="DataHandler" parent="." unique_id=1418038468 instance=ExtResource("2_0w15o")]

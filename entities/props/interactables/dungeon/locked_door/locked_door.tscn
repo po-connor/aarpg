@@ -192,3 +192,4 @@ shape = SubResource("RectangleShape2D_tbtny")
 debug_color = Color(0.56423974, 0.5585628, 0.017028468, 0.41960785)
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="." unique_id=235182499]
+bus = &"SFX"

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d3euui4x3rdlw" path="res://levels/level.gd" id="1_h5135"]
 [ext_resource type="PackedScene" uid="uid://drmssoaid62nx" path="res://tile_maps/dungeon_01.tscn" id="2_j47fk"]
+[ext_resource type="AudioStream" uid="uid://dbof075x47wc6" path="res://levels/music/music_dungeon.ogg" id="2_uoqcb"]
 [ext_resource type="PackedScene" uid="uid://pnyolknsrp2s" path="res://entities/props/interactables/dungeon/barred_door/barred_door.tscn" id="3_j47fk"]
 [ext_resource type="PackedScene" uid="uid://c8vv686s1e0db" path="res://levels/level_transition/level_transition.tscn" id="3_uoqcb"]
 [ext_resource type="PackedScene" uid="uid://dbhv13lwe7daf" path="res://levels/player_spawn/player_spawn.tscn" id="4_fnv85"]
@@ -12,6 +13,7 @@
 
 [node name="03" type="Node2D" unique_id=870654427]
 script = ExtResource("1_h5135")
+background_music = ExtResource("2_uoqcb")
 metadata/_custom_type_script = "uid://d3euui4x3rdlw"
 
 [node name="Dungeon01" parent="." unique_id=496248505 instance=ExtResource("2_j47fk")]
@@ -42,5 +44,5 @@ position = Vector2(176, 304)
 position = Vector2(288, 176)
 item_data = ExtResource("8_yavya")
 
-[connection signal="enemies_defeated" from="EnemyCounter" to="ItemDropper" method="drop_item"]
 [connection signal="enemies_defeated" from="EnemyCounter" to="BarredDoor" method="_on_open"]
+[connection signal="enemies_defeated" from="EnemyCounter" to="ItemDropper" method="drop_item"]

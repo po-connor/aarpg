@@ -243,6 +243,7 @@ libraries/ = SubResource("AnimationLibrary_q4456")
 autoplay = &"closed"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1750011117]
+bus = &"SFX"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1222499956]
 collision_layer = 16

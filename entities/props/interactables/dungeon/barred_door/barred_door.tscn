@@ -209,5 +209,6 @@ libraries/ = SubResource("AnimationLibrary_ogw22")
 autoplay = &"closed"
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="." unique_id=513998964]
+bus = &"SFX"
 
 [node name="DataHandler" parent="." unique_id=1418038468 instance=ExtResource("4_p8gf0")]

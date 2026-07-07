@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://b73shkf6gavw1"]
 
 [ext_resource type="Script" uid="uid://d3euui4x3rdlw" path="res://levels/level.gd" id="1_7tfed"]
+[ext_resource type="AudioStream" uid="uid://3yf4euq1it8d" path="res://levels/music/music_grassland.ogg" id="2_136j0"]
 [ext_resource type="PackedScene" uid="uid://vk1gceyypjf2" path="res://tile_maps/grass_01.tscn" id="2_plff5"]
 [ext_resource type="PackedScene" uid="uid://dbhv13lwe7daf" path="res://levels/player_spawn/player_spawn.tscn" id="3_a58t3"]
 [ext_resource type="PackedScene" uid="uid://c8vv686s1e0db" path="res://levels/level_transition/level_transition.tscn" id="4_plff5"]
@@ -8,6 +9,7 @@
 
 [node name="grass_01_b2" type="Node2D" unique_id=443361681]
 script = ExtResource("1_7tfed")
+background_music = ExtResource("2_136j0")
 metadata/_edit_horizontal_guides_ = [489.0]
 
 [node name="Grass01" parent="." unique_id=2087875003 instance=ExtResource("2_plff5")]
