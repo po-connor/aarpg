@@ -14,13 +14,13 @@ func _ready() -> void:
 	_update_texture()
 	if Engine.is_editor_hint():
 		return
+	var mat := sprite_2d.material as ShaderMaterial
 	data_handler.data_loaded.connect(_set_pickup_state)
 	_set_pickup_state()
 
 func _set_pickup_state() -> void:
 	if data_handler.get_value("is_picked_up", false):
 		_disable_pickup()
-		queue_free()
 	else:
 		visible = true
 		if not area_2d.body_entered.is_connected(_on_body_entered):
