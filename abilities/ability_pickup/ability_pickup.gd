@@ -8,6 +8,7 @@ signal picked_up
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @export var ability_data: AbilityData: set = _set_ability_data
 @onready var data_handler: PersistentDataHandler = $DataHandler
+@onready var glow_animation: AnimationPlayer = $GlowAnimation
 
 func _ready() -> void:
 	_update_texture()
@@ -18,11 +19,19 @@ func _ready() -> void:
 
 func _set_pickup_state() -> void:
 	if data_handler.get_value("is_picked_up", false):
+		_disable_pickup()
 		queue_free()
 	else:
 		visible = true
 		if not area_2d.body_entered.is_connected(_on_body_entered):
 			area_2d.body_entered.connect(_on_body_entered)
+
+func _disable_pickup() -> void:
+	glow_animation.stop(false)
+	sprite_2d.queue_free()
+	if area_2d.body_entered.is_connected(_on_body_entered):
+		area_2d.body_entered.disconnect(_on_body_entered)
+	
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
@@ -35,12 +44,11 @@ func _ability_picked_up() -> void:
 		area_2d.body_entered.disconnect(_on_body_entered)
 	if audio_stream_player_2d and audio_stream_player_2d.stream:
 		audio_stream_player_2d.play()
-	visible = false
 	picked_up.emit()
 	if audio_stream_player_2d and audio_stream_player_2d.playing:
 		await audio_stream_player_2d.finished
 	data_handler.set_value("is_picked_up", true)
-	queue_free()
+	_set_pickup_state()
 
 func _set_ability_data(value: AbilityData) -> void:
 	ability_data = value

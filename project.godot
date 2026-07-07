@@ -33,8 +33,8 @@ PauseMenu="*uid://dm1nk3u3r3wvg"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/window_width_override=640
-window/size/window_height_override=360
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 window/stretch/mode="viewport"
 
 [editor]
@@ -119,3 +119,5 @@ ability_cycle_up={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+viewport/hdr_2d=true
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

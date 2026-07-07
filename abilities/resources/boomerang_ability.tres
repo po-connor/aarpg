@@ -1,14 +1,11 @@
 [gd_resource type="Resource" script_class="AbilityData" format=3 uid="uid://c3pknpnqnsy4b"]
 
 [ext_resource type="Script" uid="uid://c5xxs4fs33wpw" path="res://abilities/resources/ability_data.gd" id="1_52kvw"]
-[ext_resource type="Texture2D" uid="uid://de1bxoaf02wat" path="res://abilities/boomerang/sprites/boomerang.png" id="1_v1t16"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v1t16"]
-atlas = ExtResource("1_v1t16")
-region = Rect2(0, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://b2k0semt414yo" path="res://abilities/boomerang/sprites/boomerang_icon.png" id="1_h782v"]
 
 [resource]
 script = ExtResource("1_52kvw")
+ability_name = "Boomerang"
 ability_description = "Throw it!"
-ability_icon = SubResource("AtlasTexture_v1t16")
+ability_icon = ExtResource("1_h782v")
 metadata/_custom_type_script = "uid://c5xxs4fs33wpw"

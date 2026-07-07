@@ -1,28 +1,140 @@
 [gd_scene format=3 uid="uid://cjsjd53356348"]
 
 [ext_resource type="Script" uid="uid://cosp1fbqhldny" path="res://abilities/ability_pickup/ability_pickup.gd" id="1_e01yd"]
-[ext_resource type="Texture2D" uid="uid://b8bduxd7punv5" path="res://entities/player/sprites/shadow.png" id="2_ffwee"]
+[ext_resource type="Texture2D" uid="uid://b2k0semt414yo" path="res://abilities/boomerang/sprites/boomerang_icon.png" id="2_qaref"]
 [ext_resource type="PackedScene" uid="uid://b1emmhtrf0hdf" path="res://handlers/persistent_data_handler/persistent_data_handler.tscn" id="3_jfrma"]
+[ext_resource type="Texture2D" uid="uid://d8i7clym1oa8" path="res://abilities/ability_pickup/sprites/stele.png" id="4_qaref"]
+
+[sub_resource type="Environment" id="Environment_ffqy3"]
+background_mode = 3
+tonemap_mode = 3
+glow_enabled = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cfrsm"]
-radius = 9.0
+radius = 11.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfrsm"]
+size = Vector2(20, 11)
+
+[sub_resource type="Animation" id="Animation_mdk56"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(4.165, 4.165, 4.165, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Stele/Sprite2d:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qaref"]
+resource_name = "default"
+length = 1.6
+loop_mode = 1
+step = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2),
+"update": 0,
+"values": [Vector2(0, -22), Vector2(0, -24.5), Vector2(0, -22), Vector2(0, -24.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2),
+"update": 0,
+"values": [Color(1.6938539, 1.6938539, 1.6938539, 1), Color(2.6034334, 2.6034334, 2.6034334, 1), Color(1.6938539, 1.6938539, 1.6938539, 1), Color(2.6034334, 2.6034334, 2.6034334, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Stele/Sprite2d:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2),
+"update": 0,
+"values": [0, 1, 0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o7qio"]
+_data = {
+&"RESET": SubResource("Animation_mdk56"),
+&"default": SubResource("Animation_qaref")
+}
 
 [node name="AbilityPickup" type="Node2D" unique_id=77179005]
 script = ExtResource("1_e01yd")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=807025108]
+environment = SubResource("Environment_ffqy3")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1862628468]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1134372598]
 shape = SubResource("CircleShape2D_cfrsm")
 
+[node name="Stele" type="StaticBody2D" parent="." unique_id=1238646701]
+collision_layer = 16
+collision_mask = 0
+
+[node name="Sprite2d" type="Sprite2D" parent="Stele" unique_id=694754010]
+position = Vector2(-1, -7)
+texture = ExtResource("4_qaref")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stele" unique_id=1431364089]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_cfrsm")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1326465397]
+modulate = Color(4.165, 4.165, 4.165, 1)
+texture = ExtResource("2_qaref")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=765663996]
 
-[node name="ShadowSprite2D" type="Sprite2D" parent="." unique_id=228333297]
-modulate = Color(0, 0, 0, 0.52156866)
-position = Vector2(0, 7)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_ffwee")
-
 [node name="DataHandler" parent="." unique_id=1418038468 instance=ExtResource("3_jfrma")]
+
+[node name="GlowAnimation" type="AnimationPlayer" parent="." unique_id=2035799599]
+libraries/ = SubResource("AnimationLibrary_o7qio")
+autoplay = &"default"
