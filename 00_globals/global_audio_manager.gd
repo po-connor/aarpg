@@ -18,7 +18,7 @@ func _ready() -> void:
 		music_players.append(audio_stream_player)
 
 func play_music(audio: AudioStream) -> void:
-	if music_players[current_music_player_index] and audio == music_players[current_music_player_index].stream:
+	if current_music_player_index > -1 and audio == music_players[current_music_player_index].stream:
 		return
 	var free_music_player_index: int = -1	
 	for i in music_audio_player_count:
@@ -26,8 +26,12 @@ func play_music(audio: AudioStream) -> void:
 		if not mp.playing:
 			free_music_player_index = i
 			break
-	_fade_in(music_players.get(free_music_player_index), audio)
-	_fade_out(music_players.get(current_music_player_index))
+	if current_music_player_index > -1:
+		var current = music_players.get(current_music_player_index)
+		_fade_out(current)
+	if free_music_player_index > -1:
+		var next = music_players.get(free_music_player_index)
+		_fade_in(next, audio)
 	current_music_player_index = free_music_player_index
 
 func _fade_in(music_player: AudioStreamPlayer, audio: AudioStream) -> void:
